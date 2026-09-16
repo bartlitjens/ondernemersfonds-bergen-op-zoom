@@ -1,0 +1,799 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Veelgestelde vragen</title><meta name="data-notion-page-icon" content="/icons/city_blue.svg"/><link rel="icon" href="https://app.notion.com/icons/city_blue.svg"/><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="3dde4d2e-edcf-8185-ab15-e30ca05280a7" class="page sans" data-notion-page-icon="/icons/city_blue.svg"><header><img class="page-cover-image" src="Schermafbeelding_2026-09-15_220348.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon notion-static-icon" src="https://app.notion.com/icons/city_blue.svg"/></div><h1 class="page-title" dir="auto">Veelgestelde vragen</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="3dde4d2e-edcf-80ec-abe0-d0e6224f2311" class="" dir="auto"><strong>Voorstel voor het oprichten van een gemeentebreed Ondernemersfonds Bergen op Zoom</strong></p><div id="3dde4d2e-edcf-8062-9833-d75132422630" class="column-list" data-notion-column-list="" dir="auto"><div id="3dde4d2e-edcf-803a-84e2-eb3160748411" style="width:16.666666666666664%" class="column" data-notion-column-ratio="0.16666666666666666" dir="auto"><p id="3dde4d2e-edcf-807a-a2d9-dd303e9d1f1d" class="" dir="auto">
+</p><div dir="auto"><aside class="block-color-default_background callout" data-notion-callout="" data-notion-callout-background="default_background" style="white-space:pre-wrap;display:flex" id="3dde4d2e-edcf-80a2-a45b-f1cafdb67574" dir="ltr"><div style="width:100%"><p id="3dde4d2e-edcf-8098-a657-fb6a7bef4127" class="" dir="auto"><strong>Inhoud van deze website</strong><br/><br/><a href="Samen%20investeren%20in%20de%20Bergse%20economie%203dde4d2eedcf81c68251d17ef641cd42.html">Startpagina<br/><br/></a><a href="Visie%20en%20uitdagingen%20voor%20Bergen%20op%20Zoom%203dde4d2eedcf8192b5c8d0af9167946e.html">Visie en uitdagingen<br/><br/></a><a href="Samenwerking%20mogelijk%20maken%203dde4d2eedcf81fd950dd27a4a4f6da6.html">Samenwerking mogelijk maken<br/><br/></a><a href="Veelgestelde%20vragen%203dde4d2eedcf8185ab15e30ca05280a7.html">Veelgestelde vragen<br/><br/></a><a href="Contact%203dde4d2eedcf8161801fce4a4c6197e6.html">Contact</a></p></div></aside></div><p id="3dde4d2e-edcf-8001-8776-c4eea2a6349a" class="" dir="auto">
+</p></div><div id="3dde4d2e-edcf-8078-942a-ef26fbab8f8f" style="width:49.999999999999986%" class="column" data-notion-column-ratio="0.4999999999999999" dir="auto"><p id="3dde4d2e-edcf-803a-8aa9-f2c7a6df5eab" class="" dir="auto">
+</p><blockquote id="f3305054-72ab-44c2-b861-aedb22205239" class="" dir="auto">Hier vindt u antwoord op veelgestelde vragen over het in voorbereiding zijnde gemeentebrede Ondernemersfonds in Bergen op Zoom. Transparantie staat voorop: deze pagina wordt voortdurend aangevuld met nieuwe vragen die we ophalen uit gesprekken met ondernemers, ondernemersverenigingen en maatschappelijke partners.</blockquote><hr id="92521cab-3b24-4d59-a621-6f5de16a4fec" dir="auto"/><h2 id="27bc2b81-1565-4b74-aa75-ede80cb284e0" class="" dir="auto">Over het fonds</h2><details id="95dab55c-c69a-4a87-9071-20ff0dd395c8" open="" class="toggle" dir="auto"><summary><strong>Wat is een gemeentebreed ondernemersfonds?</strong></summary><div class="indented"><p id="9f7c9eaa-f3b6-4b07-9eef-b96fc594b85c" class="" dir="auto">Een gemeentebreed ondernemersfonds is een fonds dat door en voor ondernemers wordt beheerd via een onafhankelijke stichting. Vanuit dit fonds kunnen ondernemers gezamenlijk investeren in het gemeenschappelijk belang. Denk aan een bedrijventerrein, een dorpscentrum, de wijkeconomie, het buitengebied of gemeentebrede thema&#x27;s. Het fonds biedt een vrije financiële positie in handen van ondernemers en lokale organisaties: zij bepalen zelf waaraan het geld wordt besteed.</p><p id="3f7ccb8e-3bf9-49fd-8ef8-e387ec19a919" class="" dir="auto">In Nederland werken inmiddels ruim 50 gemeenten met een dergelijk fonds, van groot (Utrecht, Groningen, Leeuwarden) tot klein (Waddeneilanden). In Brabant zijn er onder andere fondsen in Helmond, Deurne, Laarbeek en Gorinchem.</p></div></details><details id="a6cdcbe0-7111-42bd-940f-26daf5e768e8" open="" class="toggle" dir="auto"><summary><strong>Waarom een ondernemersfonds in Bergen op Zoom?</strong></summary><div class="indented"><p id="97794769-6da8-4b6f-a09f-b0b7c57a9c3c" class="" dir="auto">Lokale ondernemers krijgen met steeds meer uitdagingen te maken: verduurzaming en energietransitie, netcongestie, arbeidsmarkt en aansluiting met onderwijs, bereikbaarheid, veiligheid en de uitstraling van bedrijventerreinen en centra. Dit zijn opgaven die ondernemers niet alleen kunnen oplossen en die om collectieve slagkracht vragen.</p><p id="e7f989fd-2337-46d0-ae69-e24a88b51d44" class="" dir="auto">Specifiek voor Bergen op Zoom signaleren we knelpunten op het gebied van veiligheid, samenwerking en uitstraling, met name op bedrijventerrein TNP. De organisatiegraad is op verschillende plekken laag, collectieve voorzieningen komen moeilijk tot stand en het risico op verloedering neemt toe. Met een ondernemersfonds:</p><ul id="c87d1e6c-c15f-412c-8f4e-89598e134116" class="bulleted-list" dir="auto"><li style="list-style-type:disc">ontstaat een vast, langjarig investeringsbudget voor gebiedsambities én gemeentebrede thema&#x27;s;</li></ul><ul id="b6afd930-e089-44d2-9b03-20c9296a9e43" class="bulleted-list" dir="auto"><li style="list-style-type:disc">krijgt de organisatiegraad een boost en wordt belangenbehartiging professioneler;</li></ul><ul id="c7389175-268c-4be6-941e-c5374e6b2499" class="bulleted-list" dir="auto"><li style="list-style-type:disc">krijgt de gemeente een sterkere gesprekspartner met meer slagkracht;</li></ul><ul id="5379b93e-fd87-4aac-98a3-e65b7bd0ea22" class="bulleted-list" dir="auto"><li style="list-style-type:disc">ontstaat een hefboom om externe cofinanciering aan te trekken (provincie, Rijk, EU, netbeheerders);</li></ul><ul id="5939a52d-862f-401d-b7e7-092fdf83ce1f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">komt er een einde aan &#x27;freeriders&#x27;: iedere ondernemer betaalt naar rato mee en kan meebepalen.</li></ul></div></details><details id="e6a69f99-1d03-4a31-99e8-5b5b0f737656" open="" class="toggle" dir="auto"><summary><strong>Hoe wordt het ondernemersfonds gefinancierd?</strong></summary><div class="indented"><p id="8974e550-34bf-41b4-bfbc-8af39c8daac9" class="" dir="auto">Ondernemers brengen het geld zelf op via een kleine opslag op de OZB voor niet-woningen. Eigenaren en gebruikers van een zakelijk object investeren gezamenlijk een bedrag per € 100.000 WOZ-waarde. De bijdrage wordt verdeeld tussen eigenaar (56%) en gebruiker (44%).</p><p id="74c0cac4-bfd0-4ae0-8101-019bbfb7c525" class="" dir="auto">De gemeente int de opslag via de reguliere OZB-aanslag en zet de meeropbrengst één-op-één door naar de onafhankelijke Stichting Ondernemersfonds Bergen op Zoom. Alle betalers van OZB niet-woningen doen mee. Behalve bedrijven zijn dat bijvoorbeeld ook scholen, sportgebouwen, cultuurvastgoed en zorglocaties.</p></div></details><details id="9577605d-f59b-4c92-a23f-5cf4a31874a4" open="" class="toggle" dir="auto"><summary><strong>Welk tarief wordt voor Bergen op Zoom voorzien?</strong></summary><div class="indented"><p id="b87734fd-3480-4697-96eb-a180e18ad03c" class="" dir="auto">Geadviseerd wordt om vanaf de start te werken met een vast tarief van <strong>€ 60 per € 100.000 WOZ-waarde</strong>, in plaats van het eerder besproken ingroeimodel (€ 40 → € 50 → € 60). De bijdrage wordt verdeeld tussen eigenaar (56%) en gebruiker (44%). Dit advies wordt op 21 september 2026 met de initiatiefgroep besproken en maakt, bij instemming, onderdeel uit van het raadsvoorstel dat naar verwachting in november/december 2026 aan de gemeenteraad wordt voorgelegd.</p><p id="7d8c5544-d40b-48ca-af14-55a60aa8f704" class="" dir="auto">Bij dit tarief wordt de fondsomvang voor Bergen op Zoom geschat op circa <strong>€ 1.112.000 per jaar</strong>, waarvan 10% (± € 111.000) gereserveerd is voor gemeentebrede initiatieven. Het exacte bedrag hangt af van de definitieve WOZ-waarden en het besluit van de gemeenteraad.</p></div></details><details id="5674d91f-2253-4662-8edc-a41c8ca51dcf" open="" class="toggle" dir="auto"><summary><strong>Wat zou ik als ondernemer per jaar bijdragen? (rekenvoorbeeld)</strong></summary><div class="indented"><p id="8085f594-6a01-4d61-a232-0b5f46be74fe" class="" dir="auto">Uitgaande van het voorgestelde tarief van € 60 per € 100.000 WOZ-waarde, met een verdeling 56% eigenaar / 44% gebruiker:</p><table id="4d61f23b-b401-4ccc-9fbc-1fde111279bb" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="4c3f85db-0ed6-4bb6-ab8f-6856f0557654" dir="ltr"><th id="y?v?" class="simple-table-header-color simple-table-header">Situatie (WOZ € 300.000)</th><th id="gpF@" class="simple-table-header-color simple-table-header">Bijdrage per jaar</th></tr></thead><tbody><tr id="45bf2c08-1032-4113-b6a3-60c2ad5ab0b8" dir="ltr"><td id="y?v?" class="">Gebruiker / huurder</td><td id="gpF@" class="">€ 79,-</td></tr><tr id="948ea306-2ab4-476f-bd14-9bdddcb34930" dir="ltr"><td id="y?v?" class="">Eigenaar</td><td id="gpF@" class="">€ 101,-</td></tr><tr id="38730faa-3d62-4969-85f7-789bf316a7af" dir="ltr"><td id="y?v?" class="">Eigenaar én gebruiker</td><td id="gpF@" class="">€ 180,-</td></tr></tbody></table><p id="2ee3af6b-869b-416b-b080-46d440b0f63d" class="" dir="auto">De ervaring uit andere fondsen leert dat de individuele draaglast overzichtelijk blijft en niet leidt tot een merkbare aanpassing van de algehele kostenstructuur van een bedrijf. Tegelijkertijd is er sprake van een substantiële opbrengst voor het collectief.</p></div></details><hr id="bf021b7f-0c5b-4a62-a55e-2f0681cf7377" dir="auto"/><h2 id="82db3908-c9f1-4fae-812f-af642f41b0c2" class="" dir="auto">Bestedingen</h2><details id="b879cdba-bae6-4b37-8838-d944c278f4ab" open="" class="toggle" dir="auto"><summary><strong>Waaraan kan het geld worden besteed?</strong></summary><div class="indented"><p id="720b69f7-a3a8-4812-9341-e92c18a12c17" class="" dir="auto">Het fonds is een &#x27;regelvrije ruimte&#x27; met volkomen bestedingsvrijheid voor ondernemers. Alles wat binnen het collectief tot gezamenlijk belang wordt benoemd komt voor financiering in aanmerking. Voorbeelden uit andere gemeenten:</p><ul id="f772bbfc-7144-41b4-ae1a-86f160235023" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Energietransitie / netcongestie:</strong> onderzoek naar energyhubs, collectieve energiecontracten, kennisuitwisseling</li></ul><ul id="68b6ab4f-5746-4d3a-ae7c-64d690431be5" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Veiligheid:</strong> surveillance, alarmopvolging, KVO, camerabewaking, aanpak ondermijning</li></ul><ul id="d45c7109-ae75-4d45-b23d-0492b5b9d1cb" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Sfeer en beleving:</strong> evenementen, profilering centrum en winkelgebieden, sfeerverlichting, regiopositionering</li></ul><ul id="61b67340-9e00-403c-9468-697c79ad0f14" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Park- en centrummanagement:</strong> belangenbehartiging, schoon/heel/veilig, overleg met de gemeente</li></ul><ul id="c8447103-fa83-45d7-a54a-1e4c16595b09" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Verduurzaming:</strong> vergroening, circulaire initiatieven, zero-emissie stadslogistiek, waterberging, klimaatadaptatie</li></ul><ul id="7ad5466f-a469-431f-9c74-1930323c1f1c" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Arbeidsmarkt:</strong> open bedrijvendagen, techniekroutes, stagemarkten, samenwerking met onderwijs</li></ul><ul id="43f75eb6-a9f8-4527-bb9e-28efd72e2c26" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Buitengebied / landbouw:</strong> promotie, verbrede landbouw, afval- en wateroplossingen, eigen visieontwikkeling</li></ul><p id="1bffefd3-2806-4512-8c75-70e2da48614c" class="" dir="auto">In de meeste fondsen ontwikkelen de bestedingen zich over de tijd van praktische voorzieningen op korte termijn naar visiegedreven, structurele investeringen met cofinanciering.</p></div></details><details id="c74f12d3-cf77-4fdd-89a1-526ef5ecac5d" open="" class="toggle" dir="auto"><summary><strong>Hoe doe ik een beroep op het fonds?</strong></summary><div class="indented"><p id="d72f939a-ad39-4533-bc65-3672b8f5e5fa" class="" dir="auto">Het fonds gaat naar verwachting werken met <strong>trekkingsrechten</strong>: ieder gebied beschikt over een gezamenlijk investeringsbudget naar rato van de eigen inleg in het fonds. De ondernemers in het gebied besluiten zelf gezamenlijk over de bestedingen. Als u een plan heeft, meldt u zich bij het collectief in uw gebied.</p><p id="42e2b54c-ee2d-44f6-8fd4-963eba429b9b" class="" dir="auto">Voor gemeentebrede initiatieven wordt een vast aandeel in het fonds gereserveerd. Initiatieven met een gebiedsoverstijgend karakter kunnen via één van de collectieven worden ingediend.</p><p id="ce87405b-fb1d-4a7d-b84e-b03ac4241866" class="" dir="auto">De definitieve aanvraagprocedure en de exacte trekkingsgebieden voor Bergen op Zoom worden in de huidige verkenningsfase samen met de initiatiefgroep uitgewerkt.</p></div></details><details id="8c73aa3a-53a4-495d-8873-37ae25de1a89" open="" class="toggle" dir="auto"><summary><strong>Welke trekkingsgebieden zijn voorzien in Bergen op Zoom?</strong></summary><div class="indented"><p id="71147394-7206-4884-9a3c-d5fdb82e511d" class="" dir="auto">Voorgesteld worden zes trekkingsgebieden (werkgebieden):</p><ul id="56443382-0c8b-4502-b4f3-78f78b0bb612" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Gemeentebreed</strong> (10% van het fonds, ± € 111.000)</li></ul><ul id="d3febac6-743b-4589-ade7-054dfc6ada6f" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Bedrijventerreinen</strong>: TNP, Lage Meren-Meilust (LMM), Oude Molen, Geertruidapolder en Wouwseweg samen, ± € 513.000, met een voorstel voor een gezamenlijke Stichting Parksamenwerking Bergen op Zoom</li></ul><ul id="64fa5b8c-b1a6-44c8-aec8-4ef45019d92b" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Centrum Bergen op Zoom</strong>: opvolger van de huidige BIZ (via Sterck), ± € 174.000</li></ul><ul id="a65327e6-e80e-4b3d-a884-7c09670ae31c" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Stad &amp; Samenleving</strong>: de wijken, wijkwinkelcentra, onderwijs, zorg, sport en cultuur, ± € 185.000</li></ul><ul id="c179f01d-b6c5-4ae1-be22-d44ffee94cd8" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Halsteren</strong>: eigen trekkingsrecht voor het dorpscentrum, ± € 47.000</li></ul><ul id="b3ce9e51-a655-43f5-bd03-050db18c08b3" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Buitengebied incl. Lepelstraat</strong>: agrarische bedrijven, recreatie en verspreide bedrijvigheid, ± € 77.000</li></ul><p id="ff6bd97f-78c6-43a1-be2a-3dca5a5596a2" class="" dir="auto">De exacte grenzen liggen nog niet definitief vast en kunnen bij de verdere uitwerking op onderdelen wijzigen.</p></div></details><details id="081aff8d-3c33-43ed-926e-9ad7147dbd1b" open="" class="toggle" dir="auto"><summary><strong>Hoe werken de drie bedrijventerreinen straks samen?</strong></summary><div class="indented"><p id="a34628de-fbdb-41e3-9871-3f092265e360" class="" dir="auto">TNP, Lage Meren-Meilust (LMM) en Oude Molen vormen samen het trekkingsgebied Bedrijventerreinen. Voorgesteld wordt om de bedrijventerreinverenigingen te bundelen in een Stichting Parksamenwerking Bergen op Zoom, die het dagelijkse <strong>parkbeheer</strong> (schoon, heel, veilig) combineert met <strong>parkontwikkeling</strong>: gezamenlijk optrekken op strategische opgaven zoals beveiliging, ondermijning, truckparking en de samenwerking met onderwijs. Elk terrein behoudt daarnaast een eigen agenda voor terreinspecifieke zaken zoals bewegwijzering en groenonderhoud.</p></div></details><details id="7ad93e98-45a1-4eaf-ba48-8a599e9154fc" open="" class="toggle" dir="auto"><summary><strong>Wat betekent dit voor het buitengebied en Lepelstraat?</strong></summary><div class="indented"><p id="2710d3c3-54c6-40d5-a6aa-0fdcaeb1fa0f" class="" dir="auto">Het buitengebied (inclusief Lepelstraat) kent een grote diversiteit aan bedrijvigheid, van agrarische bedrijven tot recreatie en toerisme, en is nu nog beperkt gezamenlijk georganiseerd. Er is contact gezocht met HISWA-RECRON en ZLTO, maar dit heeft nog niet geleid tot een gezamenlijke vertegenwoordiging. Een eigen trekkingsrecht voor het buitengebied kan hier, net als in Deurne (waar Stichting Buitengebied Deurne inmiddels ondernemers uit verschillende sectoren verbindt), een impuls geven aan de organisatiegraad.</p></div></details><details id="37967edf-a0a1-4b2d-bb67-321f188f89a4" open="" class="toggle" dir="auto"><summary><strong>Kan er gespaard worden binnen het fonds?</strong></summary><div class="indented"><p id="e44ed94e-1c12-41bd-90cd-98b39d550cdc" class="" dir="auto">Ja. Het trekkingsrecht van een gebied blijft ter beschikking staan aan het collectief ter plaatse. En zolang er nog geen collectief is, blijft het trekkingsrecht voor het gebied gereserveerd. Er kan dus gespaard worden voor grotere investeringen. Oneindig oppotten is niet de bedoeling; bij langdurig onbenut trekkingsrecht zoekt het bestuur het gesprek met de trekkingsgerechtigde om te bespreken hoe het fonds beter kan worden gebruikt.</p></div></details><hr id="1612c433-50a5-4bbf-b844-f121510548bb" dir="auto"/><h2 id="a8bef704-b16b-4a23-9054-56b3efb96556" class="" dir="auto">Organisatie en zeggenschap</h2><details id="50ae2cf9-4f4b-49f5-90f9-9c01ad1ae035" open="" class="toggle" dir="auto"><summary><strong>Wie beheert het geld?</strong></summary><div class="indented"><p id="05f62d5b-e97b-4479-aa00-2a9814713d06" class="" dir="auto">Een onafhankelijke stichting, de Stichting Ondernemersfonds Bergen op Zoom, beheert het geld in één kas. Het bestuur bestaat uit ondernemers met een netwerk in ondernemend Bergen op Zoom en gevoel voor de lokale economie. Het bestuur heeft ten minste vier taken:</p><ul id="b1ed8f61-89b2-4d16-9ae5-83b540926924" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Financieel beheer:</strong> deugdelijke inrichting van het fonds, administratieve verwerking van aanvragen en toezicht op rechtmatigheid.</li></ul><ul id="723eb6ac-197d-4e02-9deb-96826792b0d9" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Ondersteunen van collectieven:</strong> informatievoorziening, kennisoverdracht en ondersteuning van initiatiefnemers.</li></ul><ul id="8bba78c9-321b-4601-8c59-dcd22a88d46a" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Stimuleren van organisatie:</strong> in nog ongeorganiseerde gebieden, met inspiratie uit andere fondsen.</li></ul><ul id="7f9c2a63-9f3d-4646-8826-74d86bd02f09" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Verantwoording:</strong> contact met de gemeente en jaarverslagen.</li></ul></div></details><details id="df7fa924-c443-44e6-b802-1a39fcafaa5e" open="" class="toggle" dir="auto"><summary><strong>Wat is de rol van de gemeente?</strong></summary><div class="indented"><p id="9c6c8af4-0e58-4ece-aec9-783b3fe4ddfb" class="" dir="auto">De verhouding tussen het fonds en de gemeente wordt vastgelegd in een convenant met twee principiële uitgangspunten:</p><ul id="9b42aed3-c2d2-4e88-811e-3fbd40a87279" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Non-interventiebeginsel:</strong> de gemeente onthoudt zich van politieke beïnvloeding van het fonds. Ondernemers bepalen zelf waaraan het geld wordt besteed.</li></ul><ul id="3f10979f-6c9e-4071-a37a-6d9eb60abb96" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Non-substitutiebeginsel:</strong> de gemeente blijft verantwoordelijk voor publieke taken. De komst van het fonds is geen aanleiding om publieke verantwoordelijkheden af te wentelen op het fonds.</li></ul><p id="4e11ea75-0046-4a8f-822f-f52174fae720" class="" dir="auto">De gemeente is zelf ook eigenaar en gebruiker van zakelijk vastgoed en betaalt via die weg mee aan het fonds. Ook hier geldt: meebetalen, maar niet meebeslissen.</p></div></details><details id="4d407a3b-8224-4ba8-b9a4-6a7dff11a6d5" open="" class="toggle" dir="auto"><summary><strong>Wie controleert het bestuur?</strong></summary><div class="indented"><p id="ba69702f-5f8a-45f3-9f71-0f430ae08b61" class="" dir="auto">Naast het bestuur komt er een adviesraad: een representatieve afvaardiging van de verschillende groepen ondernemers en maatschappelijke organisaties die meebetalen. Het bestuur legt jaarlijks verantwoording af aan de adviesraad. Daarnaast verschijnt er jaarlijks een jaarverslag met accountantsverklaring richting de gemeente, aangezien het fonds met publiek geïnde middelen wordt gevoed.</p></div></details><details id="d24ea290-88f0-4181-8099-5bce4e5a146b" open="" class="toggle" dir="auto"><summary><strong>Hoe groot is de overhead van het fonds?</strong></summary><div class="indented"><p id="134ecd1b-a45c-405a-93e4-a5cf7f772267" class="" dir="auto">Landelijk is de vuistregel dat circa <strong>6%</strong> van een ondernemersfonds nodig is voor centrale kosten: technische inrichting, communicatie en website, accountantscontrole en secretariaat. In Bergen op Zoom wordt hiervoor het gemeentebrede aandeel van 10% (± € 111.000) gebruikt: een deel dekt deze vaste kosten en professionele ondersteuning (bijvoorbeeld een fondsmanager), en het resterende deel is bedoeld voor grotere, gebiedsoverstijgende initiatieven. In het opstartjaar kunnen de kosten tijdelijk hoger liggen door eenmalige zaken zoals de oprichting van de stichting en de opzet van de website en boekhouding.</p></div></details><hr id="17c9ee40-1a75-4ac4-9446-6afa2d1b5d93" dir="auto"/><h2 id="669d1f41-0860-45f7-84da-faab74626b07" class="" dir="auto">Maatschappelijke partijen</h2><details id="ef8a6fff-a507-49d1-b143-a0a4dad43777" open="" class="toggle" dir="auto"><summary><strong>Wat is de positie van onderwijs, zorg, cultuur en sport?</strong></summary><div class="indented"><p id="5a65248a-2506-4a1f-a8ed-fa491278a850" class="" dir="auto">Maatschappelijk vastgoed doet ook mee in het fonds; non-profitorganisaties worden van harte uitgenodigd om actief te zijn binnen het fonds. De ervaring elders is dat zij vaak actieve gebruikers zijn: ze hebben belang bij veiligheid, uitstraling, beheer, promotie en activiteiten, én brengen specifieke belangen in:</p><ul id="bfc0013b-c230-4f03-be30-4540de91852d" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Onderwijs</strong> heeft baat bij contact met bedrijfsleven over stageplekken, bedrijfsbezoeken en aansluiting onderwijs-arbeidsmarkt.</li></ul><ul id="115c6ed0-2c2f-43e1-8232-b587d68e9308" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Sport en cultuur</strong> trekken vaak op met bedrijven rond sponsoring, marketing en gezamenlijke activiteiten.</li></ul><ul id="8380592c-4d55-4dc0-9940-33a6a91bb6a4" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Zorgorganisaties</strong> zoeken kansen op het gebied van preventie en het verbinden van cliënten en bewoners met de maatschappij.</li></ul><p id="ef844d04-34a9-4b9b-a449-6a28857be61d" class="" dir="auto">Voor Bergen op Zoom zijn onder andere onderwijsinstelling Curio en ziekenhuis Bravis al bij de initiatiefgroep aangehaakt.</p></div></details><details id="3d6deba1-bd9b-43ab-992f-449866291e50" open="" class="toggle" dir="auto"><summary><strong>Wat gebeurt er met de bestaande BIZ Binnenstad?</strong></summary><div class="indented"><p id="1793b89d-04bc-4507-85cf-a3017a6c393e" class="" dir="auto">In Bergen op Zoom voert ondernemersvereniging Sterck momenteel de BIZ Binnenstad uit. Het voorstel is dat deze overgaat in het ondernemersfonds: het werkgebied van het trekkingsgebied Centrum wordt daarbij groter dan het huidige BIZ-gebied, omdat de bijdrage voortaan naar rato van de WOZ-waarde wordt geheven in plaats van een vast bedrag per object. Sterck ondersteunt deze uitbreiding, onder de voorwaarde dat het huidige serviceniveau behouden blijft; gemeente en Sterck bekijken samen hoe dit het beste kan worden geborgd. Een belangrijk uitgangspunt is dat ondernemers niet dubbel betalen.</p></div></details><hr id="3ef9da12-0587-41b6-a3a1-8ff6ede0d087" dir="auto"/><h2 id="7387b407-45a0-422f-a563-4841ff11ac0d" class="" dir="auto">Het proces in Bergen op Zoom</h2><details id="4fe281fc-0d84-4c0f-9c42-85a7797c5118" open="" class="toggle" dir="auto"><summary><strong>Waar staan we nu in Bergen op Zoom?</strong></summary><div class="indented"><p id="ce049662-bdc5-4e32-9c51-4261eda4ac50" class="" dir="auto">In de raadsbegroting 2026 is opgenomen dat de gemeente toewerkt naar een raadsvoorstel voor invoering van een gemeentebreed ondernemersfonds per 1 januari 2027, mits er voldoende draagvlak bestaat. Sinds de aftrapbijeenkomst op 5 februari 2026 in het Delta Agrifood Business Lab zijn drie bijeenkomsten van de initiatiefgroep gehouden; een vierde bijeenkomst staat gepland op <strong>21 september 2026</strong>.</p><p id="8367f716-0413-4986-a330-a61eeeeb736d" class="" dir="auto">Er ligt inmiddels een inhoudelijk uitgewerkt voorstel, met een advies aan de gemeenteraad om het fonds in te voeren. Na bespreking met de initiatiefgroep en verdere communicatie richting ondernemers en organisaties wordt het voorstel naar verwachting in <strong>november/december 2026</strong> ter besluitvorming aan de gemeenteraad voorgelegd, bij het vaststellen van de OZB-tarieven.</p></div></details><details id="5c310fc1-f4e5-46a7-993b-c8a9406d3af7" open="" class="toggle" dir="auto"><summary><strong>Wat is het advies aan de gemeenteraad?</strong></summary><div class="indented"><p id="b4f02d3c-6e19-451e-a107-050aac2d25b8" class="" dir="auto">Het advies is om het Ondernemersfonds Bergen op Zoom in te voeren. Dit advies is gebaseerd op een duidelijke economische en maatschappelijke meerwaarde, een breed gedragen inhoudelijk fundament (gebiedsindeling, governance en financiële systematiek zijn uitgewerkt in overleg met de initiatiefgroep), een uitvoerbare financiële en organisatorische basis, en groeiend draagvlak gedurende het traject. De resterende aandachtspunten liggen vooral in de verdere uitwerking van de governance en de praktische samenwerking, en staan de besluitvorming niet in de weg.</p></div></details><details id="d41276a6-b0cc-400e-9f8b-932900ae1811" open="" class="toggle" dir="auto"><summary><strong>Welke partijen zijn betrokken bij de initiatiefgroep?</strong></summary><div class="indented"><p id="4bf23b15-8e2a-480a-ba4f-176a07cb64f9" class="" dir="auto">In de initiatiefgroep zijn vertegenwoordigd:</p><ul id="2b13bce8-a1bb-4f15-8352-e4566048567d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">De bedrijventerreinen TNP, Oude Molen en LMM</li></ul><ul id="8ed1a8ce-cc9c-4236-822c-9e71577d1cb1" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Individuele ondernemers</li></ul><ul id="23f56f80-6c72-45c5-b843-b4995413ea07" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Ondernemersvereniging STERCK Binnenstad</li></ul><ul id="f85f7ce1-b3f3-4134-8f6f-56b95682daa8" class="bulleted-list" dir="auto"><li style="list-style-type:disc">MKB Bergen op Zoom</li></ul><ul id="33f20b8e-8154-4bd3-baca-9e0c6342eec2" class="bulleted-list" dir="auto"><li style="list-style-type:disc">VNO-NCW Brabantse Wal</li></ul><ul id="fe5dd5b6-ff47-4113-afd7-a4fce8815144" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Onderwijsinstelling Curio</li></ul><ul id="f3661ff0-d8f8-4372-b331-3e1f9264fcfa" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Koninklijke Horeca Nederland afdeling Bergen op Zoom</li></ul><ul id="488f85ea-a6b1-473f-83fe-5ec81f1c8e28" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Horeca in binnenstad en buitengebied</li></ul><ul id="fb93fd90-0353-4c7f-a976-c96f9458305d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Ziekenhuis Bravis</li></ul><ul id="2523fd25-ef62-444e-9114-f16c908b00a4" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Dorpswinkelcentra (via voorzitter Winkelhart Halsteren)</li></ul><p id="6b438663-a81c-4495-91da-2602c3388735" class="" dir="auto">De groep wordt waar nodig nog aangevuld met partijen uit onder meer sport, cultuur, zorg en landbouw, zodat een zo representatief mogelijk beeld ontstaat van ondernemend Bergen op Zoom. Voor het buitengebied is inmiddels contact gezocht met HISWA-RECRON en ZLTO; dit heeft nog niet geleid tot een gezamenlijke vertegenwoordiging, maar de komst van het fonds kan hier juist een impuls aan geven.</p></div></details><details id="bb583f2e-3b32-4a01-8926-5ca63da9cae9" open="" class="toggle" dir="auto"><summary><strong>Welke partijen staan al positief tegenover het initiatief?</strong></summary><div class="indented"><p id="dff11749-a563-41c2-9874-19a6718d29df" class="" dir="auto">Het draagvlak is de afgelopen periode gegroeid. <strong>VNO-NCW Brabantse Wal</strong> en <strong>MKB Bergen op Zoom</strong> zijn nadrukkelijk voorstander. De besturen van de drie bedrijventerreinverenigingen (TNP, LMM en Oude Molen) zien inmiddels de meerwaarde en pleiten zelfs voor een directe start met het volledige tarief van € 60. Ondernemersvereniging <strong>Sterck</strong> (binnenstad) is voorstander, mits het huidige serviceniveau van de BIZ behouden blijft. Ook de winkeliersvereniging van <strong>Halsteren</strong>, aanvankelijk terughoudend, is inmiddels voorstander. Onderwijsinstelling <strong>Curio</strong> en ziekenhuis <strong>Bravis</strong> zijn vanaf een vroeg stadium aangesloten. Enkele partijen zijn kritisch over het proces; deze signalen worden meegenomen in de verdere uitwerking.</p></div></details><details id="80a3b765-3515-449c-8c88-0882e7eb26e7" open="" class="toggle" dir="auto"><summary><strong>Wat is de rol van Blaauwberg?</strong></summary><div class="indented"><p id="a262b4fa-e430-4ffb-a6bd-54359402015d" class="" dir="auto">Adviesbureau Blaauwberg uit Leiden begeleidt de verkenning. Blaauwberg heeft ruime ervaring met de begeleiding van ondernemersfondsen in tientallen Nederlandse gemeenten, waaronder Helmond, Deurne, Leiden, Delft en Leeuwarden. Het bureau brengt landelijke praktijkervaring in en helpt bij gesprekken, draagvlakopbouw, het uitwerken van de startnotitie en de inhoudelijke vormgeving van het fonds.</p></div></details><details id="3de965d7-b89e-43b8-b0b4-307407eebded" open="" class="toggle" dir="auto"><summary><strong>Zijn er al voorbeelden van bestaande ondernemersfondsen?</strong></summary><div class="indented"><p id="36c83ac1-1ae1-487e-9b6c-83fb98ecda14" class="" dir="auto">Ja, in Nederland werken inmiddels ruim vijftig gemeenten met een ondernemersfonds, van grote steden tot kleine gemeenten. Een paar voorbeelden met een eigen website waar u de werkwijze en projecten kunt bekijken:</p><ul id="8392e215-81fc-4a8d-990a-df3b799bded1" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://www.ondernemersfondshelmond.nl/">Ondernemersfonds Helmond</a></li></ul><ul id="27e94eb9-f51e-45ac-83bf-033218a6296e" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://www.ondernemersfondslaarbeek.nl/">Ondernemersfonds Laarbeek</a></li></ul><ul id="7ede24a2-651f-4c4d-9e46-e40e5807fd0a" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://ofgd.nl/">Ondernemersfonds Gemeente Deurne</a></li></ul><ul id="0b80e81d-4ffa-47f8-bc7c-0ed1bd0a64e0" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://ondernemersfondsutrecht.nl/">Ondernemersfonds Utrecht</a></li></ul><p id="49a48ac0-dfd9-41dc-8556-d7d4e69c9b5c" class="" dir="auto">Deze fondsen laten zien hoe een gemeentebreed fonds er in de praktijk uitziet: van trekkingsgebieden en tarieven tot concrete projecten.</p></div></details><details id="4abf9a44-f45e-4c8e-aa9b-06a5e4042522" open="" class="toggle" dir="auto"><summary><strong>Wat voor concrete projecten worden er in andere gemeenten van het fonds betaald?</strong></summary><div class="indented"><p id="9aa14a6a-39fc-4a09-bd43-8f73347ed023" class="" dir="auto">Ondernemersfondsen financieren een grote diversiteit aan projecten, van klein en praktisch tot groot en strategisch. Een paar concrete voorbeelden per soort initiatief:</p><ul id="68faf1cb-5b58-4e79-b9b6-40d35dd53d30" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Maatschappelijke initiatieven</strong>: <a href="https://www.ondernemersfondsdelft.nl/">Ondernemersfonds Delft</a> financierde een Science Day en de verduurzaming van Sportpark Tanthof Zuid; <a href="https://ondernemersfondsutrecht.nl/">Ondernemersfonds Utrecht</a> ondersteunt onder meer de jaarlijkse Utrecht Science Week.</li></ul><ul id="eb9309c2-d656-427c-a4b3-2b463ccfa1ea" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Gebieds- en sectoroverstijgende initiatieven</strong>: <a href="https://ondernemersfondsdordrecht.nl/">Ondernemersfonds Dordrecht</a> investeerde in het project &#x27;Werken aan biodiversiteit&#x27; en een uitleendienst voor e-bikes; <a href="https://ondernemersfondsutrecht.nl/">Ondernemersfonds Utrecht</a> financiert onder meer de Impact Fair, die sociaal ondernemerschap verbindt met het lokale bedrijfsleven.</li></ul><ul id="83b945db-052d-4b1c-91ae-95b70e658d5f" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Bedrijventerreinen</strong>: <a href="https://www.ondernemersfondshelmond.nl/">Ondernemersfonds Helmond</a> maakt met &#x27;Smart Synergy&#x27; kennisdeling tussen bedrijven mogelijk; <a href="https://www.ondernemersfondslaarbeek.nl/">Ondernemersfonds Laarbeek</a> financiert structureel parkmanagement en een jaarlijkse open bedrijvendag; <a href="https://www.ondernemersfondsdelft.nl/">Ondernemersfonds Delft</a> maakt collectieve inkoop van zonnepanelen mogelijk.</li></ul><ul id="8ff5cb52-9cea-462b-a2f1-5bf803630d19" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Centra en wijken</strong>: <a href="https://ondernemersfondsdordrecht.nl/">Ondernemersfonds Dordrecht</a> organiseert het evenement &#x27;Dordrecht pakt uit&#x27;; <a href="https://www.ondernemersfondslaarbeek.nl/">Ondernemersfonds Laarbeek</a> financiert de lichtjesactie &#x27;Ondernemers in het licht&#x27; in de winkelgebieden.</li></ul><ul id="88a8d573-0b67-44b5-9485-6c202e8de0ae" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Buitengebied</strong>: <a href="https://ofgd.nl/">Ondernemersfonds Gemeente Deurne</a> ondersteunt onder meer Project Groen Gas en de jaarlijkse Boerderijdag, en publiceert de reeks &#x27;Buitengebied in Beeld&#x27; waarin ondernemers uit het buitengebied aan het woord komen.</li></ul><p id="f6822257-f1fb-4360-89ff-0d16a1e2d546" class="" dir="auto">Deze voorbeelden laten zien hoe breed de bestedingsvrijheid in de praktijk wordt ingevuld: van feestverlichting tot energietransitie, en van een enkel evenement tot structurele samenwerking.</p></div></details><details id="0009bd6d-5771-45c3-a597-ed2c1a73cd66" open="" class="toggle" dir="auto"><summary><strong>Wat is het vervolg?</strong></summary><div class="indented"><p id="8a015ba7-0b05-41a7-b199-b4d0dda5366e" class="" dir="auto">De routing van een fonds verloopt doorgaans in drie fasen, met telkens een go/no-go-moment:</p><ol type="1" id="dfe0332c-0fbf-4db0-a14b-d697238f6292" class="numbered-list" start="1" dir="auto"><li><strong>Oriëntatie</strong>: vorming van de initiatiefgroep, contour van het fonds, eerste gesprekken (afgerond).</li></ol><ol type="1" id="5e8eb2f1-b6eb-49ff-a292-98f5d0a3aa64" class="numbered-list" start="2" dir="auto"><li><strong>Verbreed en verdiepend onderzoek</strong>: uitwerken van een inhoudelijk voorstel en ophalen van draagvlak (afgerond/lopend).</li></ol><ol type="1" id="fcb2b126-4963-4afd-be96-d6c3e1f47357" class="numbered-list" start="3" dir="auto"><li><strong>Politieke besluitvorming en implementatie</strong>: besluit door de gemeenteraad, installatie van het bestuur, inrichting van het fonds (aanstaande).</li></ol><p id="538e0446-0e1c-450a-974f-3fb62d9521b6" class="" dir="auto">Het voorstel wordt eerst besproken met de initiatiefgroep; de uitkomsten hiervan worden verwerkt in de definitieve versie. Daarna communiceren de initiatiefgroep en de gemeente breed over het voorstel. De gemeenteraad kan een ondernemersfonds alleen invoeren bij het vaststellen van de OZB-tarieven, wat jaarlijks gebeurt in de begrotingsvergadering (november/december). Bij een positief besluit kan het fonds per <strong>1 januari 2027</strong> van start gaan. Daarna volgen nog enkele praktische stappen: het oprichten van de Stichting Ondernemersfonds Bergen op Zoom (met bestuur), het opstellen van een convenant tussen gemeente en stichting, het oprichten van de adviesraad, en het verder uitwerken van de samenwerking tussen de trekkingsgebieden en de gemeentebrede organisatie.</p></div></details><details id="14030599-578c-4d4d-8dc2-19003d8372b5" open="" class="toggle" dir="auto"><summary><strong>Hoe kan ik meedenken of meepraten?</strong></summary><div class="indented"><p id="4e9da689-4776-4826-b3c5-293f54601454" class="" dir="auto">Iedere ondernemer en maatschappelijke organisatie in Bergen op Zoom is welkom om mee te denken. Dat kan via uw eigen ondernemersvereniging of gebiedscollectief, via een lid van de initiatiefgroep, of door rechtstreeks contact op te nemen met de gemeente of met Blaauwberg. Heeft u een vraag die nog niet op deze pagina staat? Laat het ons weten via de contactgegevens in het colofon. We vullen de Q&amp;A aan met nieuwe vragen die binnenkomen.</p></div></details><p id="6b649e93-d845-45e5-91dc-76548a08a4cd" class="" dir="auto"><em><br/>Deze Q&amp;A wordt regelmatig bijgewerkt naarmate de verkenning vordert. Laatste update: 15 september 2026.<br/></em></p><hr id="3dde4d2e-edcf-80d8-b0bf-db213ef8ba5d" dir="auto"/><p id="3dde4d2e-edcf-802d-aa39-f1b90ea835d3" class="" dir="auto"><em>Wilt u meer weten over wat het fonds voor uw gebied kan betekenen? Neem </em><em><a href="Contact%203dde4d2eedcf8161801fce4a4c6197e6.html">contac</a></em><em>t op.</em></p><p id="9960ed6d-ebf3-4a45-a498-26dcf1e9a5b9" class="" dir="auto">
+</p></div><div id="3dde4d2e-edcf-8027-a27b-f393ba94131c" style="width:33.33333333333333%" class="column" data-notion-column-ratio="0.3333333333333333" dir="auto"><p id="3dde4d2e-edcf-80f9-8a9c-d1df8f33ca84" class="" dir="auto">
+</p></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

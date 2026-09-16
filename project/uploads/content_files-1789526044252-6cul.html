@@ -1,0 +1,801 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Visie en uitdagingen voor Bergen op Zoom</title><meta name="data-notion-page-icon" content="/icons/city_blue.svg"/><link rel="icon" href="https://app.notion.com/icons/city_blue.svg"/><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="3dde4d2e-edcf-8192-b5c8-d0af9167946e" class="page sans" data-notion-page-icon="/icons/city_blue.svg"><header><img class="page-cover-image" src="Schermafbeelding_2026-09-15_215823.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon notion-static-icon" src="https://app.notion.com/icons/city_blue.svg"/></div><h1 class="page-title" dir="auto">Visie en uitdagingen voor Bergen op Zoom</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="3dde4d2e-edcf-80cc-9656-c567db672b2e" class="" dir="auto"><strong>Voorstel voor het oprichten van een gemeentebreed Ondernemersfonds Bergen op Zoom</strong></p><div id="3dde4d2e-edcf-8051-a5c0-f86a73689fc3" class="column-list" data-notion-column-list="" dir="auto"><div id="3dde4d2e-edcf-8057-81c9-ec5c0c2698c7" style="width:16.666666666666664%" class="column" data-notion-column-ratio="0.16666666666666666" dir="auto"><p id="3dde4d2e-edcf-808c-b598-c48f48ea881e" class="" dir="auto">
+</p><div dir="auto"><aside class="block-color-default_background callout" data-notion-callout="" data-notion-callout-background="default_background" style="white-space:pre-wrap;display:flex" id="3dde4d2e-edcf-80a2-a45b-f1cafdb67574" dir="ltr"><div style="width:100%"><p id="3dde4d2e-edcf-8098-a657-fb6a7bef4127" class="" dir="auto"><strong>Inhoud van deze website</strong><br/><br/><a href="Samen%20investeren%20in%20de%20Bergse%20economie%203dde4d2eedcf81c68251d17ef641cd42.html">Startpagina<br/><br/></a><a href="Visie%20en%20uitdagingen%20voor%20Bergen%20op%20Zoom%203dde4d2eedcf8192b5c8d0af9167946e.html">Visie en uitdagingen<br/><br/></a><a href="Samenwerking%20mogelijk%20maken%203dde4d2eedcf81fd950dd27a4a4f6da6.html">Samenwerking mogelijk maken<br/><br/></a><a href="Veelgestelde%20vragen%203dde4d2eedcf8185ab15e30ca05280a7.html">Veelgestelde vragen<br/><br/></a><a href="Contact%203dde4d2eedcf8161801fce4a4c6197e6.html">Contact</a></p></div></aside></div><p id="3dde4d2e-edcf-8061-b940-f75afa0f6b34" class="" dir="auto">
+</p></div><div id="3dde4d2e-edcf-80fe-9a7d-d18fdc847e47" style="width:50.000000000000014%" class="column" data-notion-column-ratio="0.5000000000000001" dir="auto"><p id="3dde4d2e-edcf-80a2-8b01-e9e67093c191" class="" dir="auto">
+</p><h2 id="c4420005-906e-4a48-9ae9-cf0dc1648f9b" class="" dir="auto">Bergen op Zoom: van industrieel verleden naar toekomstbestendige werkstad</h2><p id="587ccbe8-5c89-4142-b943-a4741595f98e" class="" dir="auto">Bergen op Zoom profileert zich als de plek van &#x27;de makers van morgen&#x27;. Met bijna 30% van het bebouwde oppervlak bestemd als bedrijventerrein is de gemeente een echte werkstad, met een rijke industriële traditie in productie en logistiek. Toonaangevende multinationals zijn er gevestigd naast een breed en innovatief mkb, met de plant based economy als interessante speerpuntsector voor de toekomst.</p><p id="405aac70-9a94-4f8a-b2bf-2843d3a65a85" class="" dir="auto">Bergen op Zoom is niet de enige stad die zich als moderne industriestad heruitvindt: Eindhoven doet het met hightech, Leiden met life sciences, Helmond met automotive en foodtech, Terneuzen met chemie en biobased bedrijven. De moderne maakindustrie is een bron van lokale welvaartschepping: de toegevoegde waarde is hoog en er ontwikkelt zich vaak een keten van toeleveranciers in logistiek, handel, dienstverlening en horeca.</p><h2 id="2fa572e1-e4df-4b5a-be25-215346608f39" class="" dir="auto">De economie groeit onvoldoende mee</h2><p id="7ecfb4de-b23d-4090-9ffc-9e13188e2c5e" class="" dir="auto">De omvang van de economie drukken we uit in het aantal banen per 100 leden van de beroepsbevolking. Een score boven de 110 duidt op een duidelijke centrumfunctie, een score onder de 70 op een &#x27;slaapstad&#x27;.</p><table id="cc55def0-8368-41e6-98d8-106f3d2f631c" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="6a5d89ba-c372-4764-b728-863d2c0b8587" dir="ltr"><th id="E|BG" class="simple-table-header-color simple-table-header">Gemeente</th><th id="}kc=" class="simple-table-header-color simple-table-header">Banen per 100 leden beroepsbevolking (2014)</th><th id="LO_q" class="simple-table-header-color simple-table-header">Banen per 100 leden beroepsbevolking (2024)</th></tr></thead><tbody><tr id="79a89291-f144-4432-bbe1-61bad2246d1e" dir="ltr"><td id="E|BG" class="">Bergen op Zoom</td><td id="}kc=" class="">88</td><td id="LO_q" class="">88</td></tr><tr id="7d34de0b-20cd-43ef-afd1-c1d1fd1ebae4" dir="ltr"><td id="E|BG" class="">Breda</td><td id="}kc=" class="">101</td><td id="LO_q" class="">108</td></tr><tr id="a578f4c5-561c-4083-851f-af8ead6e8b99" dir="ltr"><td id="E|BG" class="">Den Bosch</td><td id="}kc=" class="">113</td><td id="LO_q" class="">127</td></tr><tr id="8952d14c-9624-4784-a56b-9e9cd329a945" dir="ltr"><td id="E|BG" class="">Eindhoven</td><td id="}kc=" class="">120</td><td id="LO_q" class="">128</td></tr><tr id="de7204ee-070e-41f0-a868-e64c2ee879a6" dir="ltr"><td id="E|BG" class="">Roosendaal</td><td id="}kc=" class="">93</td><td id="LO_q" class="">100</td></tr><tr id="33971e72-9192-453d-9420-0060d188f8db" dir="ltr"><td id="E|BG" class="">Tilburg</td><td id="}kc=" class="">91</td><td id="LO_q" class="">98</td></tr><tr id="6c78364f-bc1f-40d3-bd52-d2c62568fe5c" dir="ltr"><td id="E|BG" class="">Terneuzen</td><td id="}kc=" class="">106</td><td id="LO_q" class="">109</td></tr></tbody></table><p id="6031a762-2510-4625-94f5-7597a3f3bab9" class="" dir="auto">Bergen op Zoom is verre van een slaapstad (typische woongemeenten scoren tussen de 55 en 80), maar een score van 88 is ook niet indrukwekkend, zeker gezien het aantal hectaren bedrijventerrein. Zorgelijk is dat er, in tegenstelling tot vergelijkbare gemeenten, geen ontwikkeling in zit. De beroepsbevolking daalt bovendien richting 2040, wat de krapte op de arbeidsmarkt verder zal doen toenemen.</p><h2 id="0b7cdece-774c-42f3-abed-c808e0ede9b4" class="" dir="auto">Een goed vestigingsklimaat is geen abstract begrip</h2><p id="3584c82b-bf42-4320-90b7-607d143fa1c6" class="" dir="auto">Voor middelgrote steden wordt de concurrentie om talent en bedrijven alleen maar groter. Een goed vestigingsklimaat is een optelsom van concrete voorwaarden:</p><ul id="076cb336-e09a-4e9d-bb69-c34803a613c2" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Veilige, schone en aantrekkelijke bedrijventerreinen, toekomstbestendig ingericht met oog voor duurzaamheid, multimodale bereikbaarheid en uitstraling</li></ul><ul id="8c9a3b0c-5975-4350-9a78-f33936aff392" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Collectieve oplossingen voor netcongestie: slimme energiehubs, collectieve opslag, piekmanagement</li></ul><ul id="238f19a7-675b-4830-a9d0-0712e0bc17b7" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Structurele samenwerking tussen bedrijfsleven en onderwijs: gezamenlijke onderwijsprogramma&#x27;s, stage- en leerwerktrajecten</li></ul><ul id="ad9294c9-aea7-4b6a-b235-d6c914b1b634" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Een aantrekkelijke stad en kernen: levendige centra, vitale wijken en een herkenbaar economisch profiel</li></ul><p id="001117ff-fa80-48e4-aaed-b92b0483b276" class="" dir="auto">Dit alles vraagt om structurele investeringen en gezamenlijke regie. Het ondernemersfonds maakt het mogelijk om als bedrijfsleven collectief te investeren in kwaliteit, samenwerking en innovatie: niet incidenteel, maar duurzaam en georganiseerd.</p><hr id="a88adf3e-5804-4f7d-8e20-4ce89d4910e7" dir="auto"/><h2 id="4fcdf20e-f47f-487a-8f84-75b15685e34e" class="" dir="auto">Zeven opgaven waar het fonds concreet verschil kan maken</h2><p id="3d39822f-35c9-45d4-b937-e836f93dc430" class="" dir="auto">De gesprekken met ondernemers en organisaties leveren een herkenbare lijst van opgaven op waar gezamenlijke aanpak en investering het verschil maken. Dit is geen dichtgetimmerd programma: het fonds is vraaggestuurd en initiatieven ontstaan vanuit de praktijk. Toch geeft het een goed beeld van waar de komende jaren winst te behalen valt.</p><p id="8052a2ba-3a62-40e3-a83f-098b98676b56" class="" dir="auto">Klik op een opgave om uit te klappen:</p><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="6a3b841e-ac39-47ce-a568-a6e9f5939d70" style="display:inline-block">Organisatiegraad en betrokkenheid</h3></summary><div class="indented"><p id="c88e3ef0-2e4f-4258-9039-8accf100dcfc" class="" dir="auto">In delen van de gemeente is de organisatiegraad nog beperkt en zijn netwerken versnipperd: ondernemers en organisaties weten elkaar onvoldoende te vinden. Het fonds kan hier een verbindende rol spelen: contact leggen, behoeften ophalen, kennis toegankelijk maken, zodat samenwerking vanzelfsprekender wordt en initiatieven sneller van de grond komen. Dit speelt op elk niveau: van bedrijventerrein en wijk tot kern en gemeentebreed.</p><aside class="callout" data-notion-callout="" data-notion-callout-icon="📍" style="white-space:pre-wrap;display:flex" id="f51d08df-3718-4ff2-ba48-8e4ea3a2aece" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="📍"></span></div><div style="width:100%"><p id="4b0831b7-ebc0-41cf-98c4-42a1d13ac1d5" class="" dir="auto"><strong>Voorbeeld:</strong> Ondernemersfonds Hardinxveld-Giessendam liet een Kansen- en Verbeterpuntenonderzoek uitvoeren op bedrijventerrein Langeveer, om gericht te werken aan een hogere organisatiegraad.</p></div></aside></div></details><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="c474f6eb-235b-47eb-86b8-a7addcb58760" style="display:inline-block">Professionaliteit en uitvoeringskracht</h3></summary><div class="indented"><p id="92dfc62a-b1d0-4687-820d-5bef85741dbe" class="" dir="auto">Veel initiatieven leunen nu op vrijwilligers, wat de continuïteit en slagkracht beperkt. Het fonds maakt professionele capaciteit mogelijk: een fondsmanager, gebiedsmanagers met specifieke taken (park- of centrummanagement), die projecten voorbereidt, uitvoert en bewaakt. Dat verhoogt de kwaliteit, versnelt de uitvoering en ontlast vrijwilligers en besturen.</p><aside class="callout" data-notion-callout="" data-notion-callout-icon="📍" style="white-space:pre-wrap;display:flex" id="afe05992-a1f3-4e8e-bcbb-c4e7418fb74d" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="📍"></span></div><div style="width:100%"><p id="30005625-0ce8-425b-992e-7280ae31e19d" class="" dir="auto"><strong>Voorbeeld:</strong> Ondernemersfonds Laarbeek investeert structureel in parkmanagement, zodat de bedrijventerreinen een vast aanspreekpunt en professionele ondersteuning hebben.</p></div></aside></div></details><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="2a836f18-ab85-42af-8633-451a88d1f6c4" style="display:inline-block">Veiligheid en ondermijning</h3></summary><div class="indented"><p id="2979bc7e-b87e-42a8-b904-a19dd1d73514" class="" dir="auto">Op bedrijventerreinen ontbreekt het nu vaak aan structureel parkmanagement en een gezamenlijke aanpak van veiligheid en beheer; ook het buitengebied krijgt in toenemende mate te maken met ondermijning. Via het fonds kan worden ingezet op een collectieve aanpak volgens het Keurmerk Veilig Ondernemen (KVO), met periodieke schouwrondes, aangevuld met surveillance, camerabeveiliging en alarmopvolging waar nodig.</p><aside class="callout" data-notion-callout="" data-notion-callout-icon="📍" style="white-space:pre-wrap;display:flex" id="16136e1e-2d51-47c0-9164-d9683338b446" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="📍"></span></div><div style="width:100%"><p id="00cb71c6-25b5-4854-9fcb-1a685efd1b6b" class="" dir="auto"><strong>Voorbeeld:</strong> Ondernemersfonds Alblasserdam financiert een gemeentebreed netwerk van AED&#x27;s.</p></div></aside></div></details><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="c92988c0-d309-4f15-a54c-8196cc1a89a1" style="display:inline-block">Energietransitie en circulariteit</h3></summary><div class="indented"><p id="f422a931-4eed-4bf1-8cf1-3472e94c0441" class="" dir="auto">Bedrijven staan voor grote opgaven op het gebied van energie, grondstoffen en duurzaamheid, en er liggen volop kansen om hierin gezamenlijk op te trekken en schaalvoordeel te benutten. Denk aan haalbaarheidsstudies voor energyhubs, een gezamenlijke batterij voor energieopslag, het uitwisselen van reststromen tussen bedrijven, en ondersteuning van circulaire initiatieven zoals repaircafés.</p><aside class="callout" data-notion-callout="" data-notion-callout-icon="📍" style="white-space:pre-wrap;display:flex" id="9b73072d-4630-49b8-a1ca-6d01bc296eea" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="📍"></span></div><div style="width:100%"><p id="2be4664b-2823-49d4-a0c1-35f84f5ba705" class="" dir="auto"><strong>Voorbeeld:</strong> Ondernemersfonds Gemeente Deurne ondersteunt vanuit het buitengebied Project Groen Gas.</p></div></aside></div></details><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="9ffce521-610f-4bed-bdda-f8c3a6589fdf" style="display:inline-block">Sfeer en beleving</h3></summary><div class="indented"><p id="130a95f2-e4d9-4cd4-aa4a-64aa2edfcaa3" class="" dir="auto">Een aantrekkelijk gebied is meer dan functioneel: sfeer en beleving spelen een belangrijke rol bij het aantrekken van bezoekers, klanten, werknemers en nieuwe inwoners. Het fonds kan bijdragen aan evenementen, promotie en gezamenlijke campagnes die de identiteit van Bergen op Zoom versterken; in de binnenstad vervult de BIZ (via Sterck) hier al een belangrijke rol in.</p><aside class="callout" data-notion-callout="" data-notion-callout-icon="📍" style="white-space:pre-wrap;display:flex" id="166d5e73-bad0-4471-88d6-27a4b08f2570" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="📍"></span></div><div style="width:100%"><p id="caf33363-ceca-419d-89ca-794e9ffdecc4" class="" dir="auto"><strong>Voorbeeld:</strong> Ondernemersfonds Enkhuizen zet in op &#x27;Etalage van de stad&#x27;, gericht op sfeer en aantrekkelijkheid van het centrum.</p></div></aside></div></details><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="b7a085e2-935c-420a-b0b0-2721ee9a07a7" style="display:inline-block">Arbeidsmarkt en talent</h3></summary><div class="indented"><p id="2a4a0ea8-4da4-48d4-a371-651774af8f36" class="" dir="auto">De krapte op de arbeidsmarkt en de aantrekkingskracht van de regio vragen om actieve inzet op het behouden, aantrekken en ontwikkelen van talent. Het fonds kan initiatieven ondersteunen rond werkgeversprofilering, samenwerking met onderwijs, het matchen van vraag en aanbod, en thema&#x27;s als goed werkgeverschap en duurzame inzetbaarheid.</p><aside class="callout" data-notion-callout="" data-notion-callout-icon="📍" style="white-space:pre-wrap;display:flex" id="d30431a4-45a4-4041-bb31-e0505adc3709" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="📍"></span></div><div style="width:100%"><p id="01416cb1-d651-4684-9c19-6fc19deaff13" class="" dir="auto"><strong>Voorbeeld:</strong> Ondernemersfonds Súdwest-Fryslân organiseert een Werkfestival om bedrijven en (toekomstig) personeel dichter bij elkaar te brengen.</p></div></aside></div></details><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="d997d222-4c43-477f-858d-13528c08986d" style="display:inline-block">Mobiliteit en bereikbaarheid</h3></summary><div class="indented"><p id="b91e6fd3-0ae0-428f-9999-83d7ee6d2327" class="" dir="auto">Bereikbaarheid van werklocaties, centra en voorzieningen staat onder druk door toenemende verkeersstromen; tegelijk liggen er kansen in slimme en duurzame mobiliteitsoplossingen, ook relevant voor het behoud van jong talent. Denk aan deelmobiliteit, betere fietsvoorzieningen, mobiliteitsmanagement en afstemming van vervoersstromen tussen bedrijventerreinen, kernen en de regio.</p><aside class="callout" data-notion-callout="" data-notion-callout-icon="📍" style="white-space:pre-wrap;display:flex" id="8567e638-db59-41a8-928a-c144b6ee66c1" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="📍"></span></div><div style="width:100%"><p id="1afb0a10-3ab5-4082-9f05-a098f9001c02" class="" dir="auto"><strong>Voorbeeld:</strong> Ondernemersfonds Dordrecht financiert &#x27;E-wheels&#x27; en een uitleendienst voor e-bikes.</p></div></aside></div></details><p id="3dde4d2e-edcf-801d-8b75-ed7019827e5b" class="" dir="auto">
+</p><hr id="afdad13b-9c0b-4297-9db3-38fd538f46b2" dir="auto"/><h2 id="fb8373a0-c43b-4a6b-8f16-1e9abb433d76" class="" dir="auto">Onderdeel van een bredere landelijke beweging</h2><p id="7ab86abd-c00e-457b-b339-e750876298f5" class="" dir="auto">Bergen op Zoom staat hierin niet alleen. Door het hele land werken gemeenten en ondernemers aan het vergroten van de organisatiegraad en samenwerking op bedrijventerreinen. Het Rijk ondersteunt dit onder meer via de <strong>SPUK-regeling Bedrijfsmatig Vastgoed</strong> (Specifieke Uitkering), waarmee provincies aanjagers inzetten om de organisatiegraad op bedrijventerreinen te verhogen, als randvoorwaarde voor verduurzaming. Een ondernemersfonds sluit hier goed op aan: het biedt de structurele, langjarige financiering die nodig is om die organisatiegraad ook echt te verzilveren, en om aanspraak te kunnen maken op deze en andere cofinancieringsregelingen (provincie, Rijk, EU, netbeheerders).</p><p id="af072d6e-5a0f-49a9-ae0c-ab0030feb7e4" class="" dir="auto">Inmiddels kennen ruim vijftig Nederlandse gemeenten een ondernemersfonds, van grote steden (Utrecht, Groningen, Leeuwarden, Delft) tot kleinere gemeenten (Waddeneilanden, Laren, Uithoorn). In diverse Brabantse gemeenten loopt op dit moment een vergelijkbaar traject.</p><p id="3dde4d2e-edcf-80a7-92e0-df1c79880589" class="" dir="auto">
+</p><hr id="3dde4d2e-edcf-8063-9c49-eac2e60a1f8d" dir="auto"/><p id="3dde4d2e-edcf-80a6-9c68-f7360dd4c91e" class="" dir="auto"><em>Wilt u meer weten over wat het fonds voor uw gebied kan betekenen? Neem </em><em><a href="Contact%203dde4d2eedcf8161801fce4a4c6197e6.html">contac</a></em><em>t op.</em></p></div><div id="3dde4d2e-edcf-8097-8048-cf95a9d8c958" style="width:33.33333333333333%" class="column" data-notion-column-ratio="0.3333333333333333" dir="auto"><p id="3dde4d2e-edcf-8033-84d4-ffceaab8bd7e" class="" dir="auto">
+</p></div></div><p id="3dde4d2e-edcf-806e-9ddd-d15b2f379f4d" class="" dir="auto">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body { margin:0; background:#faf8f4; color:#1f1d1a; font-family:"Libre Franklin", Helvetica, Arial, sans-serif; }
+    a { color:#33514c; }
+    a:hover { color:#1f1d1a; }
+    summary::-webkit-details-marker { display:none; }
+    summary { list-style:none; }
+  </style>
+</helmet>
+<div style="min-height:100%; background:#faf8f4">
+  <header style="background:#1f2a28; color:#f2efe9; position:sticky; top:0; z-index:10">
+    <div style="max-width:1180px; margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap">
+      <a href="#start" data-page="start" onClick="{{ onNav }}" style="font-size:15px; font-weight:700; letter-spacing:0.01em; color:#f2efe9; text-decoration:none">Ondernemersfonds <span style="font-weight:400; opacity:0.72">Bergen op Zoom</span></a>
+      <nav style="display:flex; gap:2px; flex-wrap:wrap">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+          <a href="{{ item.href }}" data-page="{{ item.id }}" onClick="{{ onNav }}" style="text-decoration:none; padding:8px 13px; font-size:14px; background:{{ item.bg }}; color:{{ item.fg }}; font-weight:{{ item.fw }}">{{ item.label }}</a>
+        </sc-for>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ isStart }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <section style="position:relative; background:#1f2a28; color:#f2efe9; overflow:hidden">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bergen_op_Zoom_Panorama_5.JPG" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 75%; opacity:0.34"/>
+        <div style="position:relative; max-width:1180px; margin:0 auto; padding:clamp(52px, 8vw, 104px) 28px">
+          <h1 style="font-size:clamp(36px, 6vw, 72px); line-height:1.02; letter-spacing:-0.03em; font-weight:700; margin:0; max-width:16em; text-wrap:pretty">Samen investeren in de Bergse economie</h1>
+          <p style="font-size:clamp(16px, 1.7vw, 19px); line-height:1.55; margin:22px 0 0; max-width:34em; color:#e6e2d9">Voorstel voor het oprichten van een gemeentebreed Ondernemersfonds Bergen op Zoom</p>
+        </div>
+      </section>
+
+      <section style="max-width:1180px; margin:0 auto; padding:clamp(36px, 5vw, 64px) 28px 0">
+        <p style="font-size:clamp(19px, 2.2vw, 25px); line-height:1.45; font-weight:500; margin:0; max-width:36em; letter-spacing:-0.012em; text-wrap:pretty">Hier vindt u alle informatie over het voorstel om in Bergen op Zoom tot een gemeentebreed ondernemersfonds te komen: de aanleiding, de opgaven voor Bergen op Zoom, hoe samenwerking op bedrijventerreinen, in het centrum en in het buitengebied eruit kan zien, en antwoorden op veelgestelde vragen.</p>
+      </section>
+
+      <section style="max-width:1180px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px 0">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:clamp(24px, 4vw, 56px); align-items:start">
+          <aside style="max-width:260px">
+            <div style="font-size:12px; letter-spacing:0.09em; text-transform:uppercase; color:#7a756c; font-weight:600; padding-bottom:10px; border-bottom:1px solid #e3ded4">Inhoud van deze website</div>
+            <div style="display:flex; flex-direction:column">
+              <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+                <a href="{{ item.href }}" data-page="{{ item.id }}" onClick="{{ onNav }}" style="text-decoration:none; font-size:14.5px; padding:11px 0; border-bottom:1px solid #e3ded4; color:{{ item.sideFg }}; font-weight:{{ item.fw }}">{{ item.label }}</a>
+              </sc-for>
+            </div>
+          </aside>
+
+          <div style="max-width:44em; grid-column:span 2; min-width:0">
+            <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+              <div style="font-size:13px; font-weight:700; color:#33514c">01</div>
+              <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Aanleiding</h2>
+            </div>
+            <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; text-wrap:pretty">In Bergen op Zoom wordt onderzocht of een gemeentebreed ondernemersfonds wenselijk is. Een ondernemersfonds is een fonds vóór en dóór ondernemers en maatschappelijke organisaties (onderwijs, zorg, sport, cultuur). Het biedt een stabiele, langjarige financiële basis om samen te werken aan een sterker vestigingsklimaat. In meer dan vijftig Nederlandse gemeenten bestaat al zo'n fonds, onder meer in Helmond en Laarbeek.</p>
+            <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0; text-wrap:pretty">Sinds februari 2026 werkt een brede initiatiefgroep van ondernemersverenigingen, bedrijventerreinen en maatschappelijke organisaties samen aan een voorstel. Inmiddels ligt er een uitgewerkt voorstel, met een advies aan de gemeenteraad om het fonds per 1 januari 2027 in te voeren. Het definitieve besluit valt naar verwachting in november/december 2026, bij de begrotingsbehandeling van de gemeenteraad.</p>
+
+            <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px; margin-top:44px">
+              <div style="font-size:13px; font-weight:700; color:#33514c">02</div>
+              <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Gedragen door de initiatiefgroep</h2>
+            </div>
+            <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 0; text-wrap:pretty">In de initiatiefgroep zijn de bedrijventerreinen TNP, Oude Molen en LMM vertegenwoordigd, samen met ondernemersvereniging Sterck (binnenstad), MKB Bergen op Zoom, VNO-NCW Brabantse Wal, onderwijsinstelling Curio, ziekenhuis Bravis, Koninklijke Horeca Nederland afdeling Bergen op Zoom, de dorpswinkelcentra (via Winkelhart Halsteren) en individuele ondernemers. Sinds de start denken zij actief mee over het voorstel. Die betrokkenheid heeft geleid tot een groeiend enthousiasme: partijen die aanvankelijk terughoudend waren, zien inmiddels de meerwaarde van een fonds en pleiten zelf voor een voortvarende start. De initiatiefgroep moedigt ondernemers en organisaties in Bergen op Zoom aan om actief mee te denken.</p>
+
+            <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px; margin-top:44px">
+              <div style="font-size:13px; font-weight:700; color:#33514c">03</div>
+              <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Doel van deze website</h2>
+            </div>
+            <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; text-wrap:pretty">Deze website is bedoeld om ondernemers, vastgoedeigenaren en maatschappelijke organisaties in Bergen op Zoom te informeren over het voorstel: waarom een ondernemersfonds, wat de belangrijkste opgaven zijn, hoe het fonds is opgebouwd en wat het voor u kan betekenen.</p>
+            <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0; text-wrap:pretty">Deze website is een verlengstuk van de initiatiefgroep om informatie te delen en in contact te komen met ondernemers en vastgoedeigenaren. Heeft u een vraag die hier niet beantwoord wordt? Neem dan gerust contact op (zie colofon).</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="background:#f2efe9; margin-top:clamp(48px, 6vw, 80px)">
+        <div style="max-width:1180px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px">
+          <h2 style="font-size:clamp(22px, 2.6vw, 28px); letter-spacing:-0.02em; font-weight:700; margin:0 0 6px">Op deze website</h2>
+          <p style="font-size:16px; line-height:1.6; color:#5c574f; margin:0 0 28px">Gebruik de pagina's hieronder (of de navigatiebalk) om verder te lezen.</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:16px">
+            <a href="#visie" data-page="visie" onClick="{{ onNav }}" style="display:block; text-decoration:none; background:#faf8f4; border-top:3px solid #33514c; padding:20px; min-height:104px; font-size:15.5px; font-weight:600; color:#1f1d1a; line-height:1.3" style-hover="background:#ffffff">Visie en uitdagingen voor Bergen op Zoom</a>
+            <a href="#samenwerking" data-page="samenwerking" onClick="{{ onNav }}" style="display:block; text-decoration:none; background:#faf8f4; border-top:3px solid #33514c; padding:20px; min-height:104px; font-size:15.5px; font-weight:600; color:#1f1d1a; line-height:1.3" style-hover="background:#ffffff">Samenwerking mogelijk maken</a>
+            <a href="#vragen" data-page="vragen" onClick="{{ onNav }}" style="display:block; text-decoration:none; background:#faf8f4; border-top:3px solid #33514c; padding:20px; min-height:104px; font-size:15.5px; font-weight:600; color:#1f1d1a; line-height:1.3" style-hover="background:#ffffff">Veelgestelde vragen</a>
+            <a href="#contact" data-page="contact" onClick="{{ onNav }}" style="display:block; text-decoration:none; background:#faf8f4; border-top:3px solid #33514c; padding:20px; min-height:104px; font-size:15.5px; font-weight:600; color:#1f1d1a; line-height:1.3" style-hover="background:#ffffff">Contact</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isVisie }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section style="position:relative; background:#1f2a28; color:#f2efe9; overflow:hidden">
+        <img src="assets/cover-visie.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 50%; opacity:0.32"/>
+        <div style="position:relative; max-width:1180px; margin:0 auto; padding:clamp(44px, 6vw, 80px) 28px">
+          <h1 style="font-size:clamp(32px, 5vw, 58px); line-height:1.05; letter-spacing:-0.03em; font-weight:700; margin:0; max-width:20em; text-wrap:pretty">Visie en uitdagingen voor Bergen op Zoom</h1>
+          <p style="font-size:clamp(15px, 1.6vw, 18px); line-height:1.55; margin:18px 0 0; max-width:34em; color:#e6e2d9">Voorstel voor het oprichten van een gemeentebreed Ondernemersfonds Bergen op Zoom</p>
+        </div>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px 0">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">01</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0; text-wrap:pretty">Bergen op Zoom: van industrieel verleden naar toekomstbestendige werkstad</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; max-width:44em; text-wrap:pretty">Bergen op Zoom profileert zich als de plek van 'de makers van morgen'. Met bijna 30% van het bebouwde oppervlak bestemd als bedrijventerrein is de gemeente een echte werkstad, met een rijke industriële traditie in productie en logistiek. Toonaangevende multinationals zijn er gevestigd naast een breed en innovatief mkb, met de plant based economy als interessante speerpuntsector voor de toekomst.</p>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0; max-width:44em; text-wrap:pretty">Bergen op Zoom is niet de enige stad die zich als moderne industriestad heruitvindt: Eindhoven doet het met hightech, Leiden met life sciences, Helmond met automotive en foodtech, Terneuzen met chemie en biobased bedrijven. De moderne maakindustrie is een bron van lokale welvaartschepping: de toegevoegde waarde is hoog en er ontwikkelt zich vaak een keten van toeleveranciers in logistiek, handel, dienstverlening en horeca.</p>
+
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px; margin-top:44px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">02</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">De economie groeit onvoldoende mee</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 22px; max-width:44em; text-wrap:pretty">De omvang van de economie drukken we uit in het aantal banen per 100 leden van de beroepsbevolking. Een score boven de 110 duidt op een duidelijke centrumfunctie, een score onder de 70 op een 'slaapstad'.</p>
+        <div style="overflow-x:auto">
+          <table style="border-collapse:collapse; width:100%; min-width:520px; font-size:15px">
+            <thead>
+              <tr>
+                <th style="text-align:left; padding:12px 14px; background:#1f2a28; color:#f2efe9; font-weight:600; font-size:13.5px; line-height:1.3">Gemeente</th>
+                <th style="text-align:right; padding:12px 14px; background:#1f2a28; color:#f2efe9; font-weight:600; font-size:13.5px; line-height:1.3">Banen per 100 leden beroepsbevolking (2014)</th>
+                <th style="text-align:right; padding:12px 14px; background:#1f2a28; color:#f2efe9; font-weight:600; font-size:13.5px; line-height:1.3">Banen per 100 leden beroepsbevolking (2024)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f2efe9">
+                <td style="padding:11px 14px; font-weight:700; border-bottom:1px solid #e3ded4">Bergen op Zoom</td>
+                <td style="padding:11px 14px; text-align:right; font-weight:700; border-bottom:1px solid #e3ded4">88</td>
+                <td style="padding:11px 14px; text-align:right; font-weight:700; border-bottom:1px solid #e3ded4">88</td>
+              </tr>
+              <tr>
+                <td style="padding:11px 14px; border-bottom:1px solid #e3ded4">Breda</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">101</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">108</td>
+              </tr>
+              <tr>
+                <td style="padding:11px 14px; border-bottom:1px solid #e3ded4">Den Bosch</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">113</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">127</td>
+              </tr>
+              <tr>
+                <td style="padding:11px 14px; border-bottom:1px solid #e3ded4">Eindhoven</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">120</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">128</td>
+              </tr>
+              <tr>
+                <td style="padding:11px 14px; border-bottom:1px solid #e3ded4">Roosendaal</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">93</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">100</td>
+              </tr>
+              <tr>
+                <td style="padding:11px 14px; border-bottom:1px solid #e3ded4">Tilburg</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">91</td>
+                <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">98</td>
+              </tr>
+              <tr>
+                <td style="padding:11px 14px">Terneuzen</td>
+                <td style="padding:11px 14px; text-align:right">106</td>
+                <td style="padding:11px 14px; text-align:right">109</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:22px 0 0; max-width:44em; text-wrap:pretty">Bergen op Zoom is verre van een slaapstad (typische woongemeenten scoren tussen de 55 en 80), maar een score van 88 is ook niet indrukwekkend, zeker gezien het aantal hectaren bedrijventerrein. Zorgelijk is dat er, in tegenstelling tot vergelijkbare gemeenten, geen ontwikkeling in zit. De beroepsbevolking daalt bovendien richting 2040, wat de krapte op de arbeidsmarkt verder zal doen toenemen.</p>
+
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px; margin-top:44px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">03</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Een goed vestigingsklimaat is geen abstract begrip</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 18px; max-width:44em; text-wrap:pretty">Voor middelgrote steden wordt de concurrentie om talent en bedrijven alleen maar groter. Een goed vestigingsklimaat is een optelsom van concrete voorwaarden:</p>
+        <ul style="margin:0 0 18px; padding:0; list-style:none; display:grid; gap:10px; max-width:44em">
+          <li style="display:flex; gap:12px; font-size:17px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:7px; height:7px; background:#33514c; margin-top:10px"></span><span>Veilige, schone en aantrekkelijke bedrijventerreinen, toekomstbestendig ingericht met oog voor duurzaamheid, multimodale bereikbaarheid en uitstraling</span></li>
+          <li style="display:flex; gap:12px; font-size:17px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:7px; height:7px; background:#33514c; margin-top:10px"></span><span>Collectieve oplossingen voor netcongestie: slimme energiehubs, collectieve opslag, piekmanagement</span></li>
+          <li style="display:flex; gap:12px; font-size:17px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:7px; height:7px; background:#33514c; margin-top:10px"></span><span>Structurele samenwerking tussen bedrijfsleven en onderwijs: gezamenlijke onderwijsprogramma's, stage- en leerwerktrajecten</span></li>
+          <li style="display:flex; gap:12px; font-size:17px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:7px; height:7px; background:#33514c; margin-top:10px"></span><span>Een aantrekkelijke stad en kernen: levendige centra, vitale wijken en een herkenbaar economisch profiel</span></li>
+        </ul>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0; max-width:44em; text-wrap:pretty">Dit alles vraagt om structurele investeringen en gezamenlijke regie. Het ondernemersfonds maakt het mogelijk om als bedrijfsleven collectief te investeren in kwaliteit, samenwerking en innovatie: niet incidenteel, maar duurzaam en georganiseerd.</p>
+      </section>
+
+      <section style="background:#f2efe9; margin-top:clamp(44px, 6vw, 72px)">
+        <div style="max-width:900px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px">
+          <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+            <div style="font-size:13px; font-weight:700; color:#33514c">04</div>
+            <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0; text-wrap:pretty">Zeven opgaven waar het fonds concreet verschil kan maken</h2>
+          </div>
+          <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; max-width:44em; text-wrap:pretty">De gesprekken met ondernemers en organisaties leveren een herkenbare lijst van opgaven op waar gezamenlijke aanpak en investering het verschil maken. Dit is geen dichtgetimmerd programma: het fonds is vraaggestuurd en initiatieven ontstaan vanuit de praktijk. Toch geeft het een goed beeld van waar de komende jaren winst te behalen valt.</p>
+          <p style="font-size:14.5px; line-height:1.6; color:#5c574f; margin:0 0 20px; font-weight:500">Klik op een opgave om uit te klappen:</p>
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <sc-for list="{{ opgaven }}" as="item" hint-placeholder-count="7">
+              <details style="background:#faf8f4; border-left:3px solid #33514c">
+                <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a; display:flex; gap:12px; align-items:baseline">
+                  <span style="color:#33514c; font-size:13px; font-weight:700">{{ item.num }}</span>
+                  <span>{{ item.title }}</span>
+                </summary>
+                <div style="padding:0 20px 20px 45px">
+                  <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">{{ item.body }}</p>
+                  <p style="font-size:15px; line-height:1.6; color:#33514c; margin:0; padding:12px 16px; background:#eef0ec; max-width:42em">{{ item.example }}</p>
+                </div>
+              </details>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">05</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Onderdeel van een bredere landelijke beweging</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; max-width:44em; text-wrap:pretty">Bergen op Zoom staat hierin niet alleen. Door het hele land werken gemeenten en ondernemers aan het vergroten van de organisatiegraad en samenwerking op bedrijventerreinen. Het Rijk ondersteunt dit onder meer via de SPUK-regeling Bedrijfsmatig Vastgoed (Specifieke Uitkering), waarmee provincies aanjagers inzetten om de organisatiegraad op bedrijventerreinen te verhogen, als randvoorwaarde voor verduurzaming. Een ondernemersfonds sluit hier goed op aan: het biedt de structurele, langjarige financiering die nodig is om die organisatiegraad ook echt te verzilveren, en om aanspraak te kunnen maken op deze en andere cofinancieringsregelingen (provincie, Rijk, EU, netbeheerders).</p>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0; max-width:44em; text-wrap:pretty">Inmiddels kennen ruim vijftig Nederlandse gemeenten een ondernemersfonds, van grote steden (Utrecht, Groningen, Leeuwarden, Delft) tot kleinere gemeenten (Waddeneilanden, Laren, Uithoorn). In diverse Brabantse gemeenten loopt op dit moment een vergelijkbaar traject.</p>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isSamenwerking }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section style="position:relative; background:#1f2a28; color:#f2efe9; overflow:hidden">
+        <img src="assets/cover-samenwerking.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 50%; opacity:0.32"/>
+        <div style="position:relative; max-width:1180px; margin:0 auto; padding:clamp(44px, 6vw, 80px) 28px">
+          <h1 style="font-size:clamp(32px, 5vw, 58px); line-height:1.05; letter-spacing:-0.03em; font-weight:700; margin:0; max-width:20em; text-wrap:pretty">Samenwerking mogelijk maken</h1>
+          <p style="font-size:clamp(15px, 1.6vw, 18px); line-height:1.55; margin:18px 0 0; max-width:34em; color:#e6e2d9">Voorstel voor het oprichten van een gemeentebreed Ondernemersfonds Bergen op Zoom</p>
+        </div>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px 0">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">01</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Eén fonds, maatwerk per gebied</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; max-width:44em; text-wrap:pretty">Het ondernemersfonds is verdeeld over verschillende trekkingsgebieden. Binnen elk gebied bepalen ondernemers en maatschappelijke organisaties zelf hun doelstellingen en de besteding van hun budget. Zo doet het voorstel recht aan de diversiteit van de Bergse economie, zonder het fonds te versnipperen over te veel afzonderlijke potjes.</p>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0; max-width:44em; text-wrap:pretty">Voor Bergen op Zoom gaat het om zes werkgebieden: Gemeentebreed, Bedrijventerreinen, Centrum Bergen op Zoom, Stad &amp; Samenleving, Halsteren en Buitengebied (incl. Lepelstraat). Voor de volledige toelichting per gebied en de bijbehorende budgetten kunt u contact opnemen (zie colofon).</p>
+
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px; margin-top:44px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">02</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Bedrijventerreinen: naar parksamenwerking</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; max-width:44em; text-wrap:pretty">Bergen op Zoom kent drie grote bedrijventerreinen: TNP (Theodorushaven-Noordland-De Poort), LMM (Lage Meren-Meilust) en Oude Molen, plus de perifere detailhandelslocaties Geertruidapolder en Wouwseweg. In het voorstel worden deze samengebracht in één trekkingsgebied Bedrijventerreinen, met ruimte voor zowel gezamenlijke als terreinspecifieke agenda's.</p>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:44em; text-wrap:pretty">Voor de bedrijventerreinen werken we dit uit langs de aanpak van parksamenwerking: de combinatie van parkbeheer (het dagelijks schoon, heel en veilig houden van het terrein) en parkontwikkeling (samenwerken aan strategische opgaven zoals energie, mobiliteit en arbeidsmarkt). Deze twee versterken elkaar: een goede dagelijkse basis maakt het mogelijk om ook de grotere, strategische opgaven gezamenlijk op te pakken.</p>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0; max-width:44em; text-wrap:pretty">We houden het hier bewust beknopt: parksamenwerking is één van de bouwstenen naast het centrum en het buitengebied. Een ondernemersfonds maakt parksamenwerking mogelijk door duurzame financiering: een team dat er echt voor gaat, een agenda voor de lange termijn en investeringen die renderen.</p>
+
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px; margin-top:44px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">03</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Centrum Bergen op Zoom</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 0; max-width:44em; text-wrap:pretty">De binnenstad is al goed georganiseerd: ondernemersvereniging Sterck voert momenteel de BIZ Binnenstad uit. Het voorstel is dat deze overgaat in het ondernemersfonds, met een groter werkgebied (omdat wordt bijgedragen naar rato van de WOZ-waarde in plaats van een vast bedrag per object). Sterck steunt deze stap, onder de voorwaarde dat het huidige serviceniveau behouden blijft.</p>
+
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px; margin-top:44px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">04</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Stad &amp; Samenleving, Halsteren en het buitengebied</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 0; max-width:44em; text-wrap:pretty">Buiten de bedrijventerreinen en het centrum liggen er net zo goed kansen voor samenwerking: in de wijken en wijkwinkelcentra, in Halsteren en in het buitengebied (inclusief Lepelstraat). Ook hier gaat het om het verbinden van bedrijfsleven met onderwijs, zorg, sport en cultuur, en om het versterken van de organisatiegraad waar die nu nog beperkt is. Onderwijsinstelling Curio en ziekenhuis Bravis zijn vanaf een vroeg stadium bij de initiatiefgroep aangesloten.</p>
+      </section>
+
+      <section style="background:#f2efe9; margin-top:clamp(44px, 6vw, 72px)">
+        <div style="max-width:900px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px">
+          <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+            <div style="font-size:13px; font-weight:700; color:#33514c">05</div>
+            <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0; text-wrap:pretty">Cross-sectorale kansen: samenwerken over de grenzen van gebieden en sectoren heen</h2>
+          </div>
+          <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; max-width:44em; text-wrap:pretty">Trekkingsgebieden geven ieder gebied een eigen budget en eigen zeggenschap. Juist de dwarsverbanden tussen sectoren en gebieden kunnen veel meerwaarde leveren. Dit is precies waarvoor het gemeentebrede aandeel (10% van het fonds) is bedoeld: initiatieven die één gebied overstijgen. Een paar voorbeelden van waar dat toe kan leiden:</p>
+          <p style="font-size:14.5px; line-height:1.6; color:#5c574f; margin:0 0 20px; font-weight:500">Klik op een dwarsverband om uit te klappen:</p>
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <sc-for list="{{ dwarsverbanden }}" as="item" hint-placeholder-count="5">
+              <details style="background:#faf8f4; border-left:3px solid #33514c">
+                <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">{{ item.title }}</summary>
+                <div style="padding:0 20px 20px">
+                  <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">{{ item.body }}</p>
+                  <p style="font-size:15px; line-height:1.6; color:#33514c; margin:0; padding:12px 16px; background:#eef0ec; max-width:42em">{{ item.example }}</p>
+                </div>
+              </details>
+            </sc-for>
+          </div>
+          <p style="font-size:17px; line-height:1.65; color:#33302b; margin:24px 0 0; max-width:44em; text-wrap:pretty">Dit zijn voorbeelden ter inspiratie, geen vaststaand programma: het fonds is vraaggestuurd, en het zijn de ondernemers en organisaties zelf die bepalen welke gebiedsoverstijgende initiatieven zij oppakken.</p>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isVragen }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section style="position:relative; background:#1f2a28; color:#f2efe9; overflow:hidden">
+        <img src="assets/cover-faq.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 50%; opacity:0.32"/>
+        <div style="position:relative; max-width:1180px; margin:0 auto; padding:clamp(44px, 6vw, 80px) 28px">
+          <h1 style="font-size:clamp(32px, 5vw, 58px); line-height:1.05; letter-spacing:-0.03em; font-weight:700; margin:0; max-width:20em">Veelgestelde vragen</h1>
+          <p style="font-size:clamp(15px, 1.6vw, 18px); line-height:1.55; margin:18px 0 0; max-width:34em; color:#e6e2d9">Voorstel voor het oprichten van een gemeentebreed Ondernemersfonds Bergen op Zoom</p>
+        </div>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(36px, 5vw, 56px) 28px 0">
+        <p style="font-size:clamp(18px, 2vw, 22px); line-height:1.5; font-weight:500; margin:0; max-width:38em; letter-spacing:-0.012em; text-wrap:pretty">Hier vindt u antwoord op veelgestelde vragen over het in voorbereiding zijnde gemeentebrede Ondernemersfonds in Bergen op Zoom. Transparantie staat voorop: deze pagina wordt voortdurend aangevuld met nieuwe vragen die we ophalen uit gesprekken met ondernemers, ondernemersverenigingen en maatschappelijke partners.</p>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(36px, 5vw, 56px) 28px 0">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">01</div>
+          <h2 style="font-size:clamp(22px, 2.6vw, 28px); letter-spacing:-0.02em; font-weight:700; margin:0">Over het fonds</h2>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px">
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat is een gemeentebreed ondernemersfonds?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Een gemeentebreed ondernemersfonds is een fonds dat door en voor ondernemers wordt beheerd via een onafhankelijke stichting. Vanuit dit fonds kunnen ondernemers gezamenlijk investeren in het gemeenschappelijk belang. Denk aan een bedrijventerrein, een dorpscentrum, de wijkeconomie, het buitengebied of gemeentebrede thema's. Het fonds biedt een vrije financiële positie in handen van ondernemers en lokale organisaties: zij bepalen zelf waaraan het geld wordt besteed.</p>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">In Nederland werken inmiddels ruim 50 gemeenten met een dergelijk fonds, van groot (Utrecht, Groningen, Leeuwarden) tot klein (Waddeneilanden). In Brabant zijn er onder andere fondsen in Helmond, Deurne, Laarbeek en Gorinchem.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Waarom een ondernemersfonds in Bergen op Zoom?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Lokale ondernemers krijgen met steeds meer uitdagingen te maken: verduurzaming en energietransitie, netcongestie, arbeidsmarkt en aansluiting met onderwijs, bereikbaarheid, veiligheid en de uitstraling van bedrijventerreinen en centra. Dit zijn opgaven die ondernemers niet alleen kunnen oplossen en die om collectieve slagkracht vragen.</p>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Specifiek voor Bergen op Zoom signaleren we knelpunten op het gebied van veiligheid, samenwerking en uitstraling, met name op bedrijventerrein TNP. De organisatiegraad is op verschillende plekken laag, collectieve voorzieningen komen moeilijk tot stand en het risico op verloedering neemt toe. Met een ondernemersfonds:</p>
+              <ul style="margin:0; padding:0; list-style:none; display:grid; gap:9px; max-width:42em">
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>ontstaat een vast, langjarig investeringsbudget voor gebiedsambities én gemeentebrede thema's;</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>krijgt de organisatiegraad een boost en wordt belangenbehartiging professioneler;</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>krijgt de gemeente een sterkere gesprekspartner met meer slagkracht;</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>ontstaat een hefboom om externe cofinanciering aan te trekken (provincie, Rijk, EU, netbeheerders);</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>komt er een einde aan 'freeriders': iedere ondernemer betaalt naar rato mee en kan meebepalen.</span></li>
+              </ul>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Hoe wordt het ondernemersfonds gefinancierd?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Ondernemers brengen het geld zelf op via een kleine opslag op de OZB voor niet-woningen. Eigenaren en gebruikers van een zakelijk object investeren gezamenlijk een bedrag per € 100.000 WOZ-waarde. De bijdrage wordt verdeeld tussen eigenaar (56%) en gebruiker (44%).</p>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">De gemeente int de opslag via de reguliere OZB-aanslag en zet de meeropbrengst één-op-één door naar de onafhankelijke Stichting Ondernemersfonds Bergen op Zoom. Alle betalers van OZB niet-woningen doen mee. Behalve bedrijven zijn dat bijvoorbeeld ook scholen, sportgebouwen, cultuurvastgoed en zorglocaties.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Welk tarief wordt voor Bergen op Zoom voorzien?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Geadviseerd wordt om te werken met een vast tarief van <strong style="font-weight:600">€ 60 per € 100.000 WOZ-waarde.</strong> De bijdrage wordt verdeeld tussen eigenaar (56%) en gebruiker (44%).</p>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Bij dit tarief wordt de fondsomvang voor Bergen op Zoom geschat op circa <strong style="font-weight:600">€ 1.112.000 per jaar</strong>, waarvan 10% (± € 111.000) gereserveerd is voor gemeentebrede initiatieven. Het exacte bedrag hangt af van de definitieve WOZ-waarden en het besluit van de gemeenteraad.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat zou ik als ondernemer per jaar bijdragen? (rekenvoorbeeld)</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 18px; max-width:42em; text-wrap:pretty">Uitgaande van het voorgestelde tarief van € 60 per € 100.000 WOZ-waarde, met een verdeling 56% eigenaar / 44% gebruiker:</p>
+              <table style="border-collapse:collapse; width:100%; max-width:480px; font-size:15.5px; background:#faf8f4">
+                <thead>
+                  <tr>
+                    <th style="text-align:left; padding:11px 14px; background:#1f2a28; color:#f2efe9; font-weight:600; font-size:13.5px">Situatie (WOZ € 300.000)</th>
+                    <th style="text-align:right; padding:11px 14px; background:#1f2a28; color:#f2efe9; font-weight:600; font-size:13.5px">Bijdrage per jaar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:11px 14px; border-bottom:1px solid #e3ded4">Gebruiker / huurder</td>
+                    <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">€ 79,-</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:11px 14px; border-bottom:1px solid #e3ded4">Eigenaar</td>
+                    <td style="padding:11px 14px; text-align:right; border-bottom:1px solid #e3ded4">€ 101,-</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:11px 14px; font-weight:700">Eigenaar én gebruiker</td>
+                    <td style="padding:11px 14px; text-align:right; font-weight:700">€ 180,-</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:18px 0 0; max-width:42em; text-wrap:pretty">De ervaring uit andere fondsen leert dat de individuele draaglast overzichtelijk blijft en niet leidt tot een merkbare aanpassing van de algehele kostenstructuur van een bedrijf. Tegelijkertijd is er sprake van een substantiële opbrengst voor het collectief.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(36px, 5vw, 56px) 28px 0">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">02</div>
+          <h2 style="font-size:clamp(22px, 2.6vw, 28px); letter-spacing:-0.02em; font-weight:700; margin:0">Bestedingen</h2>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px">
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Waaraan kan het geld worden besteed?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Het fonds is een 'regelvrije ruimte' met volkomen bestedingsvrijheid voor ondernemers. Alles wat binnen het collectief tot gezamenlijk belang wordt benoemd komt voor financiering in aanmerking. Voorbeelden uit andere gemeenten:</p>
+              <ul style="margin:0 0 14px; padding:0; list-style:none; display:grid; gap:9px; max-width:42em">
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Energietransitie / netcongestie:</strong> onderzoek naar energyhubs, collectieve energiecontracten, kennisuitwisseling</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Veiligheid:</strong> surveillance, alarmopvolging, KVO, camerabewaking, aanpak ondermijning</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Sfeer en beleving:</strong> evenementen, profilering centrum en winkelgebieden, sfeerverlichting, regiopositionering</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Park- en centrummanagement:</strong> belangenbehartiging, schoon/heel/veilig, overleg met de gemeente</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Verduurzaming:</strong> vergroening, circulaire initiatieven, zero-emissie stadslogistiek, waterberging, klimaatadaptatie</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Arbeidsmarkt:</strong> open bedrijvendagen, techniekroutes, stagemarkten, samenwerking met onderwijs</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Buitengebied / landbouw:</strong> promotie, verbrede landbouw, afval- en wateroplossingen, eigen visieontwikkeling</span></li>
+              </ul>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">In de meeste fondsen ontwikkelen de bestedingen zich over de tijd van praktische voorzieningen op korte termijn naar visiegedreven, structurele investeringen met cofinanciering.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Hoe doe ik een beroep op het fonds?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Het fonds gaat naar verwachting werken met trekkingsrechten: ieder gebied beschikt over een gezamenlijk investeringsbudget naar rato van de eigen inleg in het fonds. De ondernemers in het gebied besluiten zelf gezamenlijk over de bestedingen. Als u een plan heeft, meldt u zich bij het collectief in uw gebied.</p>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Voor gemeentebrede initiatieven wordt een vast aandeel in het fonds gereserveerd. Initiatieven met een gebiedsoverstijgend karakter kunnen via één van de collectieven worden ingediend.</p>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">De definitieve aanvraagprocedure en de exacte trekkingsgebieden voor Bergen op Zoom worden in de huidige verkenningsfase samen met de initiatiefgroep uitgewerkt.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Welke trekkingsgebieden zijn voorzien in Bergen op Zoom?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em">Voorgesteld worden zes trekkingsgebieden (werkgebieden):</p>
+              <ul style="margin:0 0 14px; padding:0; list-style:none; display:grid; gap:9px; max-width:42em">
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Gemeentebreed</strong> (10% van het fonds, ± € 111.000)</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Bedrijventerreinen:</strong> TNP, Lage Meren-Meilust (LMM), Oude Molen, Geertruidapolder en Wouwseweg samen, ± € 513.000, met een voorstel voor een gezamenlijke Stichting Parksamenwerking Bergen op Zoom</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Centrum Bergen op Zoom:</strong> opvolger van de huidige BIZ (via Sterck), ± € 174.000</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Stad &amp; Samenleving:</strong> de wijken, wijkwinkelcentra, onderwijs, zorg, sport en cultuur, ± € 185.000</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Halsteren:</strong> eigen trekkingsrecht voor het dorpscentrum, ± € 47.000</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Buitengebied incl. Lepelstraat:</strong> agrarische bedrijven, recreatie en verspreide bedrijvigheid, ± € 77.000</span></li>
+              </ul>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">De exacte grenzen liggen nog niet definitief vast en kunnen bij de verdere uitwerking op onderdelen wijzigen.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Hoe werken de drie bedrijventerreinen straks samen?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">TNP, Lage Meren-Meilust (LMM) en Oude Molen vormen samen het trekkingsgebied Bedrijventerreinen. Voorgesteld wordt om de bedrijventerreinverenigingen te bundelen in een Stichting Parksamenwerking Bergen op Zoom, die het dagelijkse parkbeheer (schoon, heel, veilig) combineert met parkontwikkeling: gezamenlijk optrekken op strategische opgaven zoals beveiliging, ondermijning, truckparking en de samenwerking met onderwijs. Elk terrein behoudt daarnaast een eigen agenda voor terreinspecifieke zaken zoals bewegwijzering en groenonderhoud.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat betekent dit voor het buitengebied en Lepelstraat?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Het buitengebied (inclusief Lepelstraat) kent een grote diversiteit aan bedrijvigheid, van agrarische bedrijven tot recreatie en toerisme, en is nu nog beperkt gezamenlijk georganiseerd. Er is contact gezocht met HISWA-RECRON en ZLTO, maar dit heeft nog niet geleid tot een gezamenlijke vertegenwoordiging. Een eigen trekkingsrecht voor het buitengebied kan hier, net als in Deurne (waar Stichting Buitengebied Deurne inmiddels ondernemers uit verschillende sectoren verbindt), een impuls geven aan de organisatiegraad.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Kan er gespaard worden binnen het fonds?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Ja. Het trekkingsrecht van een gebied blijft ter beschikking staan aan het collectief ter plaatse. En zolang er nog geen collectief is, blijft het trekkingsrecht voor het gebied gereserveerd. Er kan dus gespaard worden voor grotere investeringen. Oneindig oppotten is niet de bedoeling; bij langdurig onbenut trekkingsrecht zoekt het bestuur het gesprek met de trekkingsgerechtigde om te bespreken hoe het fonds beter kan worden gebruikt.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(36px, 5vw, 56px) 28px 0">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">03</div>
+          <h2 style="font-size:clamp(22px, 2.6vw, 28px); letter-spacing:-0.02em; font-weight:700; margin:0">Organisatie en zeggenschap</h2>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px">
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wie beheert het geld?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Een onafhankelijke stichting, de Stichting Ondernemersfonds Bergen op Zoom, beheert het geld in één kas. Het bestuur bestaat uit ondernemers met een netwerk in ondernemend Bergen op Zoom en gevoel voor de lokale economie. Het bestuur heeft ten minste vier taken:</p>
+              <ol style="margin:0; padding:0 0 0 22px; display:grid; gap:9px; max-width:42em">
+                <li style="font-size:16.5px; line-height:1.6; color:#33302b"><strong style="font-weight:600">Financieel beheer:</strong> deugdelijke inrichting van het fonds, administratieve verwerking van aanvragen en toezicht op rechtmatigheid.</li>
+                <li style="font-size:16.5px; line-height:1.6; color:#33302b"><strong style="font-weight:600">Ondersteunen van collectieven:</strong> informatievoorziening, kennisoverdracht en ondersteuning van initiatiefnemers.</li>
+                <li style="font-size:16.5px; line-height:1.6; color:#33302b"><strong style="font-weight:600">Stimuleren van organisatie:</strong> in nog ongeorganiseerde gebieden, met inspiratie uit andere fondsen.</li>
+                <li style="font-size:16.5px; line-height:1.6; color:#33302b"><strong style="font-weight:600">Verantwoording:</strong> contact met de gemeente en jaarverslagen.</li>
+              </ol>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat is de rol van de gemeente?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">De verhouding tussen het fonds en de gemeente wordt vastgelegd in een convenant met twee principiële uitgangspunten:</p>
+              <ul style="margin:0 0 14px; padding:0; list-style:none; display:grid; gap:9px; max-width:42em">
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Non-interventiebeginsel:</strong> de gemeente onthoudt zich van politieke beïnvloeding van het fonds. Ondernemers bepalen zelf waaraan het geld wordt besteed.</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Non-substitutiebeginsel:</strong> de gemeente blijft verantwoordelijk voor publieke taken. De komst van het fonds is geen aanleiding om publieke verantwoordelijkheden af te wentelen op het fonds.</span></li>
+              </ul>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">De gemeente is zelf ook eigenaar en gebruiker van zakelijk vastgoed en betaalt via die weg mee aan het fonds. Ook hier geldt: meebetalen, maar niet meebeslissen.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wie controleert het bestuur?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Naast het bestuur komt er een adviesraad: een representatieve afvaardiging van de verschillende groepen ondernemers en maatschappelijke organisaties die meebetalen. Het bestuur legt jaarlijks verantwoording af aan de adviesraad. Daarnaast verschijnt er jaarlijks een jaarverslag met accountantsverklaring richting de gemeente, aangezien het fonds met publiek geïnde middelen wordt gevoed.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Hoe groot is de overhead van het fonds?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Landelijk is de vuistregel dat circa 6% van een ondernemersfonds nodig is voor centrale kosten: technische inrichting, communicatie en website, accountantscontrole en secretariaat. In Bergen op Zoom wordt hiervoor het gemeentebrede aandeel van 10% (± € 111.000) gebruikt: een deel dekt deze vaste kosten en professionele ondersteuning (bijvoorbeeld een fondsmanager), en het resterende deel is bedoeld voor grotere, gebiedsoverstijgende initiatieven. In het opstartjaar kunnen de kosten tijdelijk hoger liggen door eenmalige zaken zoals de oprichting van de stichting en de opzet van de website en boekhouding.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(36px, 5vw, 56px) 28px 0">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">04</div>
+          <h2 style="font-size:clamp(22px, 2.6vw, 28px); letter-spacing:-0.02em; font-weight:700; margin:0">Maatschappelijke partijen</h2>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px">
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat is de positie van onderwijs, zorg, cultuur en sport?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Maatschappelijk vastgoed doet ook mee in het fonds; non-profitorganisaties worden van harte uitgenodigd om actief te zijn binnen het fonds. De ervaring elders is dat zij vaak actieve gebruikers zijn: ze hebben belang bij veiligheid, uitstraling, beheer, promotie en activiteiten, én brengen specifieke belangen in:</p>
+              <ul style="margin:0 0 14px; padding:0; list-style:none; display:grid; gap:9px; max-width:42em">
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Onderwijs</strong> heeft baat bij contact met bedrijfsleven over stageplekken, bedrijfsbezoeken en aansluiting onderwijs-arbeidsmarkt.</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Sport en cultuur</strong> trekken vaak op met bedrijven rond sponsoring, marketing en gezamenlijke activiteiten.</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Zorgorganisaties</strong> zoeken kansen op het gebied van preventie en het verbinden van cliënten en bewoners met de maatschappij.</span></li>
+              </ul>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Voor Bergen op Zoom zijn onder andere onderwijsinstelling Curio en ziekenhuis Bravis al bij de initiatiefgroep aangehaakt.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat gebeurt er met de bestaande BIZ Binnenstad?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">In Bergen op Zoom voert ondernemersvereniging Sterck momenteel de BIZ Binnenstad uit. Het voorstel is dat deze overgaat in het ondernemersfonds: het werkgebied van het trekkingsgebied Centrum wordt daarbij groter dan het huidige BIZ-gebied, omdat de bijdrage voortaan naar rato van de WOZ-waarde wordt geheven in plaats van een vast bedrag per object. Sterck ondersteunt deze uitbreiding, onder de voorwaarde dat het huidige serviceniveau behouden blijft; gemeente en Sterck bekijken samen hoe dit het beste kan worden geborgd. Een belangrijk uitgangspunt is dat ondernemers niet dubbel betalen.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(36px, 5vw, 56px) 28px clamp(40px, 5vw, 64px)">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">05</div>
+          <h2 style="font-size:clamp(22px, 2.6vw, 28px); letter-spacing:-0.02em; font-weight:700; margin:0">Het proces in Bergen op Zoom</h2>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px">
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Waar staan we nu in Bergen op Zoom?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">In de raadsbegroting 2026 is opgenomen dat de gemeente toewerkt naar een raadsvoorstel voor invoering van een gemeentebreed ondernemersfonds per 1 januari 2027, mits er voldoende draagvlak bestaat. Sinds de aftrapbijeenkomst op 5 februari 2026 in het Delta Agrifood Business Lab zijn drie bijeenkomsten van de initiatiefgroep gehouden; een vierde bijeenkomst staat gepland op 21 september 2026.</p>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Er ligt inmiddels een inhoudelijk uitgewerkt voorstel, met een advies aan de gemeenteraad om het fonds in te voeren. Na bespreking met de initiatiefgroep en verdere communicatie richting ondernemers en organisaties wordt het voorstel naar verwachting in november/december 2026 ter besluitvorming aan de gemeenteraad voorgelegd, bij het vaststellen van de OZB-tarieven.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat is het advies aan de gemeenteraad?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Het advies is om het Ondernemersfonds Bergen op Zoom in te voeren. Dit advies is gebaseerd op een duidelijke economische en maatschappelijke meerwaarde, een breed gedragen inhoudelijk fundament (gebiedsindeling, governance en financiële systematiek zijn uitgewerkt in overleg met de initiatiefgroep), een uitvoerbare financiële en organisatorische basis, en groeiend draagvlak gedurende het traject. De resterende aandachtspunten liggen vooral in de verdere uitwerking van de governance en de praktische samenwerking, en staan de besluitvorming niet in de weg.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Welke partijen zijn betrokken bij de initiatiefgroep?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em">In de initiatiefgroep zijn vertegenwoordigd:</p>
+              <ul style="margin:0 0 14px; padding:0; list-style:none; display:grid; gap:8px; max-width:42em">
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>De bedrijventerreinen TNP, Oude Molen en LMM</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>Individuele ondernemers</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>Ondernemersvereniging STERCK Binnenstad</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>MKB Bergen op Zoom</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>VNO-NCW Brabantse Wal</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>Onderwijsinstelling Curio</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>Koninklijke Horeca Nederland afdeling Bergen op Zoom</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>Horeca in binnenstad en buitengebied</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>Ziekenhuis Bravis</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span>Dorpswinkelcentra (via voorzitter Winkelhart Halsteren)</span></li>
+              </ul>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">De groep wordt waar nodig nog aangevuld met partijen uit onder meer sport, cultuur, zorg en landbouw, zodat een zo representatief mogelijk beeld ontstaat van ondernemend Bergen op Zoom. Voor het buitengebied is inmiddels contact gezocht met HISWA-RECRON en ZLTO; dit heeft nog niet geleid tot een gezamenlijke vertegenwoordiging, maar de komst van het fonds kan hier juist een impuls aan geven.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Welke partijen staan al positief tegenover het initiatief?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Het draagvlak is de afgelopen periode gegroeid. VNO-NCW Brabantse Wal en MKB Bergen op Zoom zijn nadrukkelijk voorstander. De besturen van de drie bedrijventerreinverenigingen (TNP, LMM en Oude Molen) zien inmiddels de meerwaarde en pleiten zelfs voor een directe start met het volledige tarief van € 60. Ondernemersvereniging Sterck (binnenstad) is voorstander, mits het huidige serviceniveau van de BIZ behouden blijft. Ook de winkeliersvereniging van Halsteren, aanvankelijk terughoudend, is inmiddels voorstander. Onderwijsinstelling Curio en ziekenhuis Bravis zijn vanaf een vroeg stadium aangesloten. Enkele partijen zijn kritisch over het proces; deze signalen worden meegenomen in de verdere uitwerking.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat is de rol van Blaauwberg?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Adviesbureau Blaauwberg uit Leiden begeleidt de verkenning. Blaauwberg heeft ruime ervaring met de begeleiding van ondernemersfondsen in tientallen Nederlandse gemeenten, waaronder Helmond, Deurne, Leiden, Delft en Leeuwarden. Het bureau brengt landelijke praktijkervaring in en helpt bij gesprekken, draagvlakopbouw, het uitwerken van de startnotitie en de inhoudelijke vormgeving van het fonds.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Zijn er al voorbeelden van bestaande ondernemersfondsen?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Ja, in Nederland werken inmiddels ruim vijftig gemeenten met een ondernemersfonds, van grote steden tot kleine gemeenten. Een paar voorbeelden met een eigen website waar u de werkwijze en projecten kunt bekijken:</p>
+              <ul style="margin:0 0 14px; padding:0; list-style:none; display:grid; gap:8px; max-width:42em">
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><a href="https://www.ondernemersfondshelmond.nl/" target="_blank" rel="noopener">Ondernemersfonds Helmond</a></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><a href="https://www.ondernemersfondslaarbeek.nl/" target="_blank" rel="noopener">Ondernemersfonds Laarbeek</a></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><a href="https://ofgd.nl/" target="_blank" rel="noopener">Ondernemersfonds Gemeente Deurne</a></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><a href="https://ondernemersfondsutrecht.nl/" target="_blank" rel="noopener">Ondernemersfonds Utrecht</a></li>
+              </ul>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Deze fondsen laten zien hoe een gemeentebreed fonds er in de praktijk uitziet: van trekkingsgebieden en tarieven tot concrete projecten.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat voor concrete projecten worden er in andere gemeenten van het fonds betaald?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">Ondernemersfondsen financieren een grote diversiteit aan projecten, van klein en praktisch tot groot en strategisch. Een paar concrete voorbeelden per soort initiatief:</p>
+              <ul style="margin:0 0 14px; padding:0; list-style:none; display:grid; gap:10px; max-width:42em">
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Maatschappelijke initiatieven:</strong> <a href="https://www.ondernemersfondsdelft.nl/" target="_blank" rel="noopener">Ondernemersfonds Delft</a> financierde een Science Day en de verduurzaming van Sportpark Tanthof Zuid; <a href="https://ondernemersfondsutrecht.nl/" target="_blank" rel="noopener">Ondernemersfonds Utrecht</a> ondersteunt onder meer de jaarlijkse Utrecht Science Week.</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Gebieds- en sectoroverstijgende initiatieven:</strong> <a href="https://ondernemersfondsdordrecht.nl/" target="_blank" rel="noopener">Ondernemersfonds Dordrecht</a> investeerde in het project 'Werken aan biodiversiteit' en een uitleendienst voor e-bikes; <a href="https://ondernemersfondsutrecht.nl/" target="_blank" rel="noopener">Ondernemersfonds Utrecht</a> financiert onder meer de Impact Fair, die sociaal ondernemerschap verbindt met het lokale bedrijfsleven.</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Bedrijventerreinen:</strong> <a href="https://www.ondernemersfondshelmond.nl/" target="_blank" rel="noopener">Ondernemersfonds Helmond</a> maakt met 'Smart Synergy' kennisdeling tussen bedrijven mogelijk; <a href="https://www.ondernemersfondslaarbeek.nl/" target="_blank" rel="noopener">Ondernemersfonds Laarbeek</a> financiert structureel parkmanagement en een jaarlijkse open bedrijvendag; <a href="https://www.ondernemersfondsdelft.nl/" target="_blank" rel="noopener">Ondernemersfonds Delft</a> maakt collectieve inkoop van zonnepanelen mogelijk.</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Centra en wijken:</strong> <a href="https://ondernemersfondsdordrecht.nl/" target="_blank" rel="noopener">Ondernemersfonds Dordrecht</a> organiseert het evenement 'Dordrecht pakt uit'; <a href="https://www.ondernemersfondslaarbeek.nl/" target="_blank" rel="noopener">Ondernemersfonds Laarbeek</a> financiert de lichtjesactie 'Ondernemers in het licht' in de winkelgebieden.</span></li>
+                <li style="display:flex; gap:12px; font-size:16.5px; line-height:1.6; color:#33302b"><span style="flex:0 0 auto; width:6px; height:6px; background:#33514c; margin-top:10px"></span><span><strong style="font-weight:600">Buitengebied:</strong> <a href="https://ofgd.nl/" target="_blank" rel="noopener">Ondernemersfonds Gemeente Deurne</a> ondersteunt onder meer Project Groen Gas en de jaarlijkse Boerderijdag, en publiceert de reeks 'Buitengebied in Beeld' waarin ondernemers uit het buitengebied aan het woord komen.</span></li>
+              </ul>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Deze voorbeelden laten zien hoe breed de bestedingsvrijheid in de praktijk wordt ingevuld: van feestverlichting tot energietransitie, en van een enkel evenement tot structurele samenwerking.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Wat is het vervolg?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0 0 14px; max-width:42em; text-wrap:pretty">De routing van een fonds verloopt doorgaans in drie fasen, met telkens een go/no-go-moment:</p>
+              <ol style="margin:0 0 14px; padding:0 0 0 22px; display:grid; gap:9px; max-width:42em">
+                <li style="font-size:16.5px; line-height:1.6; color:#33302b"><strong style="font-weight:600">Oriëntatie:</strong> vorming van de initiatiefgroep, contour van het fonds, eerste gesprekken (afgerond).</li>
+                <li style="font-size:16.5px; line-height:1.6; color:#33302b"><strong style="font-weight:600">Verbreed en verdiepend onderzoek:</strong> uitwerken van een inhoudelijk voorstel en ophalen van draagvlak (afgerond/lopend).</li>
+                <li style="font-size:16.5px; line-height:1.6; color:#33302b"><strong style="font-weight:600">Politieke besluitvorming en implementatie:</strong> besluit door de gemeenteraad, installatie van het bestuur, inrichting van het fonds (aanstaande).</li>
+              </ol>
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Het voorstel wordt eerst besproken met de initiatiefgroep; de uitkomsten hiervan worden verwerkt in de definitieve versie. Daarna communiceren de initiatiefgroep en de gemeente breed over het voorstel. De gemeenteraad kan een ondernemersfonds alleen invoeren bij het vaststellen van de OZB-tarieven, wat jaarlijks gebeurt in de begrotingsvergadering (november/december). Bij een positief besluit kan het fonds per 1 januari 2027 van start gaan. Daarna volgen nog enkele praktische stappen: het oprichten van de Stichting Ondernemersfonds Bergen op Zoom (met bestuur), het opstellen van een convenant tussen gemeente en stichting, het oprichten van de adviesraad, en het verder uitwerken van de samenwerking tussen de trekkingsgebieden en de gemeentebrede organisatie.</p>
+            </div>
+          </details>
+          <details style="background:#f2efe9; border-left:3px solid #33514c">
+            <summary style="cursor:pointer; padding:16px 20px; font-size:16.5px; font-weight:600; color:#1f1d1a">Hoe kan ik meedenken of meepraten?</summary>
+            <div style="padding:0 20px 20px">
+              <p style="font-size:16.5px; line-height:1.65; color:#33302b; margin:0; max-width:42em; text-wrap:pretty">Iedere ondernemer en maatschappelijke organisatie in Bergen op Zoom is welkom om mee te denken. Dat kan via uw eigen ondernemersvereniging of gebiedscollectief, via een lid van de initiatiefgroep, of door rechtstreeks contact op te nemen met de gemeente of met Blaauwberg. Heeft u een vraag die nog niet op deze pagina staat? Laat het ons weten via de contactgegevens in het colofon. We vullen de Q&amp;A aan met nieuwe vragen die binnenkomen.</p>
+            </div>
+          </details>
+        </div>
+        <p style="font-size:14.5px; line-height:1.6; color:#5c574f; margin:24px 0 0">Deze Q&amp;A wordt regelmatig bijgewerkt naarmate de verkenning vordert. Laatste update: 15 september 2026.</p>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section style="position:relative; background:#1f2a28; color:#f2efe9; overflow:hidden">
+        <img src="assets/cover-contact.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 50%; opacity:0.32"/>
+        <div style="position:relative; max-width:1180px; margin:0 auto; padding:clamp(44px, 6vw, 80px) 28px">
+          <h1 style="font-size:clamp(32px, 5vw, 58px); line-height:1.05; letter-spacing:-0.03em; font-weight:700; margin:0">Contact</h1>
+          <p style="font-size:clamp(15px, 1.6vw, 18px); line-height:1.55; margin:18px 0 0; max-width:34em; color:#e6e2d9">Voorstel voor het oprichten van een gemeentebreed Ondernemersfonds Bergen op Zoom</p>
+        </div>
+      </section>
+
+      <section style="max-width:900px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px 0">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">01</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Meer weten of gewoon even sparren?</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 0; max-width:44em; text-wrap:pretty">Deze website wordt onderhouden door de initiatiefgroep Ondernemersfonds Bergen op Zoom, met ondersteuning vanuit <a href="https://www.bergenopzoom.nl/" target="_blank" rel="noopener">gemeente Bergen op Zoom</a>, adviesbureau <a href="https://blaauwberg.nl/" target="_blank" rel="noopener">Blaauwberg</a> en <a href="https://samenmeerrealiseren.nl/" target="_blank" rel="noopener">CCE Co-creatie</a>. Heeft u vragen, opmerkingen of wilt u meedenken? Neem gerust contact op:</p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin-top:28px">
+          <div style="background:#f2efe9; border-top:3px solid #33514c; padding:24px; display:flex; gap:18px; align-items:flex-start">
+            <img src="assets/portret-claudia.png" alt="Claudia Bezembinder" style="width:96px; height:96px; object-fit:cover; flex:0 0 auto"/>
+            <div style="min-width:0">
+              <p style="font-size:16px; line-height:1.5; color:#1f1d1a; margin:0 0 8px; font-weight:600">Claudia Bezembinder</p>
+              <p style="font-size:15px; line-height:1.5; color:#33302b; margin:0 0 10px">Programmamanager Grote Oogst en Adviseur Economie, Gemeente Bergen op Zoom</p>
+              <a href="mailto:c.m.bezembinder@bergenopzoom.nl" style="font-size:14.5px; word-break:break-word">c.m.bezembinder@bergenopzoom.nl</a>
+            </div>
+          </div>
+          <div style="background:#f2efe9; border-top:3px solid #33514c; padding:24px; display:flex; gap:18px; align-items:flex-start">
+            <img src="assets/portret-rob.png" alt="Rob Bogman" style="width:96px; height:96px; object-fit:cover; flex:0 0 auto"/>
+            <div style="min-width:0">
+              <p style="font-size:16px; line-height:1.5; color:#1f1d1a; margin:0 0 8px; font-weight:600">Rob Bogman</p>
+              <p style="font-size:15px; line-height:1.5; color:#33302b; margin:0 0 10px">CCE Co-creatie</p>
+              <a href="mailto:r.bogman@samenmeerrealiseren.nl" style="font-size:14.5px; word-break:break-word">r.bogman@samenmeerrealiseren.nl</a>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:28px 0 0; max-width:44em">Neem gerust contact op met <a href="mailto:c.m.bezembinder@bergenopzoom.nl">Claudia Bezembinder</a> of <a href="mailto:r.bogman@samenmeerrealiseren.nl">Rob Bogman</a></p>
+
+        <div style="margin:36px 0 0; padding-top:18px; border-top:1px solid #e3ded4; max-width:44em; display:flex; flex-direction:column; gap:8px">
+          <p style="font-size:13.5px; line-height:1.6; color:#7a756c; margin:0">Foto's Grote Markt en skyline Bergen op Zoom: Wikimedia Commons (CC BY 4.0 / CC BY-SA 4.0), foto's van G. Lanting en andere Commons-bijdragers.</p>
+          <p style="font-size:13.5px; line-height:1.6; color:#7a756c; margin:0">Beeldmateriaal © Google, Street View</p>
+          <p style="font-size:13.5px; line-height:1.6; color:#7a756c; margin:0">Deze website is ontwikkeld door CCE Co-creatie, in opdracht van de initiatiefgroep Ondernemersfonds Bergen op Zoom en gemeente Bergen op Zoom (2026)</p>
+        </div>
+        <div style="height:56px"></div>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}">
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px">
+    <div style="display:flex; gap:24px; align-items:center; justify-content:space-between; flex-wrap:wrap; border-top:2px solid #1f2a28; padding-top:26px">
+      <p style="font-size:clamp(18px, 2.2vw, 24px); line-height:1.4; font-weight:500; margin:0; max-width:26em; letter-spacing:-0.012em; text-wrap:pretty">Wilt u meer weten over wat het fonds voor uw gebied kan betekenen? Neem contact op.</p>
+      <a href="#contact" data-page="contact" onClick="{{ onNav }}" style="background:#1f2a28; color:#f2efe9; text-decoration:none; padding:15px 28px; font-size:15px; font-weight:600; white-space:nowrap">Contact</a>
+    </div>
+  </section>
+  </sc-if>
+
+  <footer style="background:#1f2a28; color:#b9b3a8">
+    <div style="max-width:1180px; margin:0 auto; padding:26px 28px; font-size:13.5px">Initiatiefgroep Ondernemersfonds Bergen op Zoom</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+const PAGES = [
+  { id: "start", label: "Startpagina", href: "#start" },
+  { id: "visie", label: "Visie en uitdagingen", href: "#visie" },
+  { id: "samenwerking", label: "Samenwerking mogelijk maken", href: "#samenwerking" },
+  { id: "vragen", label: "Veelgestelde vragen", href: "#vragen" },
+  { id: "contact", label: "Contact", href: "#contact" }
+];
+
+const OPGAVEN = [
+  { title: "Organisatiegraad en betrokkenheid",
+    body: "In delen van de gemeente is de organisatiegraad nog beperkt en zijn netwerken versnipperd: ondernemers en organisaties weten elkaar onvoldoende te vinden. Het fonds kan hier een verbindende rol spelen: contact leggen, behoeften ophalen, kennis toegankelijk maken, zodat samenwerking vanzelfsprekender wordt en initiatieven sneller van de grond komen. Dit speelt op elk niveau: van bedrijventerrein en wijk tot kern en gemeentebreed.",
+    example: "Voorbeeld: Ondernemersfonds Hardinxveld-Giessendam liet een Kansen- en Verbeterpuntenonderzoek uitvoeren op bedrijventerrein Langeveer, om gericht te werken aan een hogere organisatiegraad." },
+  { title: "Professionaliteit en uitvoeringskracht",
+    body: "Veel initiatieven leunen nu op vrijwilligers, wat de continuïteit en slagkracht beperkt. Het fonds maakt professionele capaciteit mogelijk: een fondsmanager, gebiedsmanagers met specifieke taken (park- of centrummanagement), die projecten voorbereidt, uitvoert en bewaakt. Dat verhoogt de kwaliteit, versnelt de uitvoering en ontlast vrijwilligers en besturen.",
+    example: "Voorbeeld: Ondernemersfonds Laarbeek investeert structureel in parkmanagement, zodat de bedrijventerreinen een vast aanspreekpunt en professionele ondersteuning hebben." },
+  { title: "Veiligheid en ondermijning",
+    body: "Op bedrijventerreinen ontbreekt het nu vaak aan structureel parkmanagement en een gezamenlijke aanpak van veiligheid en beheer; ook het buitengebied krijgt in toenemende mate te maken met ondermijning. Via het fonds kan worden ingezet op een collectieve aanpak volgens het Keurmerk Veilig Ondernemen (KVO), met periodieke schouwrondes, aangevuld met surveillance, camerabeveiliging en alarmopvolging waar nodig.",
+    example: "Voorbeeld: Ondernemersfonds Alblasserdam financiert een gemeentebreed netwerk van AED's." },
+  { title: "Energietransitie en circulariteit",
+    body: "Bedrijven staan voor grote opgaven op het gebied van energie, grondstoffen en duurzaamheid, en er liggen volop kansen om hierin gezamenlijk op te trekken en schaalvoordeel te benutten. Denk aan haalbaarheidsstudies voor energyhubs, een gezamenlijke batterij voor energieopslag, het uitwisselen van reststromen tussen bedrijven, en ondersteuning van circulaire initiatieven zoals repaircafés.",
+    example: "Voorbeeld: Ondernemersfonds Gemeente Deurne ondersteunt vanuit het buitengebied Project Groen Gas." },
+  { title: "Sfeer en beleving",
+    body: "Een aantrekkelijk gebied is meer dan functioneel: sfeer en beleving spelen een belangrijke rol bij het aantrekken van bezoekers, klanten, werknemers en nieuwe inwoners. Het fonds kan bijdragen aan evenementen, promotie en gezamenlijke campagnes die de identiteit van Bergen op Zoom versterken; in de binnenstad vervult de BIZ (via Sterck) hier al een belangrijke rol in.",
+    example: "Voorbeeld: Ondernemersfonds Enkhuizen zet in op 'Etalage van de stad', gericht op sfeer en aantrekkelijkheid van het centrum." },
+  { title: "Arbeidsmarkt en talent",
+    body: "De krapte op de arbeidsmarkt en de aantrekkingskracht van de regio vragen om actieve inzet op het behouden, aantrekken en ontwikkelen van talent. Het fonds kan initiatieven ondersteunen rond werkgeversprofilering, samenwerking met onderwijs, het matchen van vraag en aanbod, en thema's als goed werkgeverschap en duurzame inzetbaarheid.",
+    example: "Voorbeeld: Ondernemersfonds Súdwest-Fryslân organiseert een Werkfestival om bedrijven en (toekomstig) personeel dichter bij elkaar te brengen." },
+  { title: "Mobiliteit en bereikbaarheid",
+    body: "Bereikbaarheid van werklocaties, centra en voorzieningen staat onder druk door toenemende verkeersstromen; tegelijk liggen er kansen in slimme en duurzame mobiliteitsoplossingen, ook relevant voor het behoud van jong talent. Denk aan deelmobiliteit, betere fietsvoorzieningen, mobiliteitsmanagement en afstemming van vervoersstromen tussen bedrijventerreinen, kernen en de regio.",
+    example: "Voorbeeld: Ondernemersfonds Dordrecht financiert 'E-wheels' en een uitleendienst voor e-bikes." }
+];
+
+const DWARSVERBANDEN = [
+  { title: "Centrum ↔ bedrijventerreinen",
+    body: "Schaalvoordeel bij een gezamenlijke veiligheidsaanpak (KVO-trajecten, camerabeveiliging, surveillance) en een gedeelde arbeidsmarktcampagne die zowel winkelpersoneel als technisch personeel voor de bedrijventerreinen aantrekt.",
+    example: "Voorbeeld: Ondernemersfonds Alblasserdam financiert een gemeentebreed netwerk van AED's, precies zo'n voorziening die je niet per gebied apart, maar gebiedsoverstijgend wilt regelen." },
+  { title: "Bedrijventerreinen ↔ buitengebied",
+    body: "Beide hebben te maken met (dreigende) ondermijning en kunnen gezamenlijk optrekken in preventie en meldingsstructuren; ook op energie liggen kansen: bedrijventerreinen als grootverbruikers, het buitengebied als mogelijke locatie voor opwek en opslag.",
+    example: "Voorbeeld: Ondernemersfonds Gemeente Deurne werkt vanuit het buitengebied al aan Project Groen Gas." },
+  { title: "Zorg ↔ bedrijfsleven",
+    body: "Bravis en werkgevers delen een belang bij een gezonde, vitale beroepsbevolking; denk aan gezamenlijke vitaliteitsprogramma's, en aan de zorgsector als partner in arbeidsmarktcampagnes; zorg kampt immers met vergelijkbare personeelskrapte als de bedrijventerreinen.",
+    example: "Voorbeeld: Ondernemersfonds Hardinxveld-Giessendam ondersteunt sport- en muziekactiviteiten voor bewoners van verzorgingshuizen, samen met lokale ondernemers." },
+  { title: "Onderwijs ↔ bedrijventerreinen én centrum",
+    body: "Curio kan met stages en leerwerktrajecten net zo goed aansluiten bij een technisch bedrijf op TNP als bij een winkel in de binnenstad; een gemeentebrede aanpak voorkomt dat onderwijs steeds opnieuw losse afspraken per sector moet maken.",
+    example: "Voorbeeld: Ondernemersfonds Alblasserdam financiert een Onderwijsroute; Ondernemersfonds Nieuwkoop een techniek-driedaagse voor leerlingen." },
+  { title: "Sport en cultuur ↔ alle gebieden",
+    body: "Een gedeelde evenementenkalender kan de binnenstad, de bedrijventerreinen (open dagen) en het buitengebied (streekpromotie, agrotoerisme) met elkaar verbinden, in plaats van dat ieder gebied los zijn eigen promotie organiseert.",
+    example: "Voorbeeld: Ondernemersfonds Utrecht doet dit met 'HKU Exposure', waarbij kunststudenten de hele stad inkleuren." }
+];
+
+class Component extends DCLogic {
+  state = { page: this.pageFromHash() };
+
+  pageFromHash() {
+    const h = (typeof location !== "undefined" ? location.hash : "").replace("#", "");
+    return PAGES.some(p => p.id === h) ? h : "start";
+  }
+
+  componentDidMount() {
+    this._onHash = () => this.setState({ page: this.pageFromHash() });
+    window.addEventListener("hashchange", this._onHash);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("hashchange", this._onHash);
+  }
+
+  go = (id) => {
+    if (id === this.state.page) return;
+    this.setState({ page: id });
+    try { history.replaceState(null, "", "#" + id); } catch (e) { location.hash = id; }
+    const sc = document.scrollingElement || document.documentElement;
+    if (sc) sc.scrollTop = 0;
+  };
+
+  renderVals() {
+    const page = this.state.page;
+    return {
+      navItems: PAGES.map(p => ({
+        id: p.id,
+        href: p.href,
+        label: p.label,
+        bg: p.id === page ? "#f2efe9" : "transparent",
+        fg: p.id === page ? "#1f2a28" : "#d8d3c8",
+        sideFg: p.id === page ? "#1f1d1a" : "#4c4740",
+        fw: p.id === page ? "600" : "400"
+      })),
+      opgaven: OPGAVEN.map((o, i) => ({ ...o, num: String(i + 1).padStart(2, "0") })),
+      dwarsverbanden: DWARSVERBANDEN,
+      onNav: (e) => {
+        const a = e.target.closest("[data-page]");
+        if (!a) return;
+        e.preventDefault();
+        this.go(a.getAttribute("data-page"));
+      },
+      isStart: page === "start",
+      isVisie: page === "visie",
+      isSamenwerking: page === "samenwerking",
+      isVragen: page === "vragen",
+      isContact: page === "contact",
+      showCta: page !== "contact"
+    };
+  }
+}
+</script>
+</body>
+</html>

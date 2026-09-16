@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body { margin:0; background:#faf8f4; color:#1f1d1a; font-family:"Libre Franklin", Helvetica, Arial, sans-serif; }
+    a { color:#33514c; }
+    a:hover { color:#1f1d1a; }
+  </style>
+</helmet>
+<div style="min-height:100%; background:#faf8f4">
+  <header style="background:#1f2a28; color:#f2efe9">
+    <div style="max-width:1180px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap">
+      <div style="font-size:15px; font-weight:700; letter-spacing:0.01em">Ondernemersfonds <span style="font-weight:400; opacity:0.72">Bergen op Zoom</span></div>
+      <nav style="display:flex; gap:4px; font-size:14px; flex-wrap:wrap">
+        <a href="#" style="color:#1f2a28; background:#f2efe9; text-decoration:none; padding:8px 14px; font-weight:600">Startpagina</a>
+        <a href="#" style="color:#d8d3c8; text-decoration:none; padding:8px 14px" style-hover="background:rgba(242,239,233,0.12)">Visie en uitdagingen</a>
+        <a href="#" style="color:#d8d3c8; text-decoration:none; padding:8px 14px" style-hover="background:rgba(242,239,233,0.12)">Samenwerking mogelijk maken</a>
+        <a href="#" style="color:#d8d3c8; text-decoration:none; padding:8px 14px" style-hover="background:rgba(242,239,233,0.12)">Veelgestelde vragen</a>
+        <a href="#" style="color:#d8d3c8; text-decoration:none; padding:8px 14px" style-hover="background:rgba(242,239,233,0.12)">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="position:relative; background:#1f2a28; color:#f2efe9; overflow:hidden">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bergen_op_Zoom_Panorama_5.JPG" alt="Panorama Bergen op Zoom" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 75%; opacity:0.34"/>
+    <div style="position:relative; max-width:1180px; margin:0 auto; padding:clamp(56px, 8vw, 104px) 28px">
+      <div style="display:inline-block; background:#c8d6c8; color:#1f2a28; font-size:12.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; padding:7px 12px">Voorstel · invoering per 1 januari 2027</div>
+      <h1 style="font-size:clamp(36px, 6vw, 72px); line-height:1.02; letter-spacing:-0.03em; font-weight:700; margin:20px 0 0; max-width:16em; text-wrap:pretty">Samen investeren in de Bergse economie</h1>
+      <p style="font-size:clamp(16px, 1.7vw, 19px); line-height:1.55; margin:22px 0 0; max-width:34em; color:#e6e2d9">Voorstel voor het oprichten van een gemeentebreed Ondernemersfonds Bergen op Zoom</p>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(36px, 5vw, 64px) 28px 0">
+    <p style="font-size:clamp(19px, 2.2vw, 25px); line-height:1.45; font-weight:500; margin:0; max-width:36em; letter-spacing:-0.012em; text-wrap:pretty">Hier vindt u alle informatie over het voorstel om in Bergen op Zoom tot een gemeentebreed ondernemersfonds te komen: de aanleiding, de opgaven voor Bergen op Zoom, hoe samenwerking op bedrijventerreinen, in het centrum en in het buitengebied eruit kan zien, en antwoorden op veelgestelde vragen.</p>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px 0">
+    <div style="display:grid; grid-template-columns:minmax(0, 220px) minmax(0, 1fr); gap:clamp(24px, 5vw, 64px)">
+      <aside style="align-self:start; position:sticky; top:24px">
+        <div style="font-size:12px; letter-spacing:0.09em; text-transform:uppercase; color:#7a756c; font-weight:600; padding-bottom:10px; border-bottom:1px solid #e3ded4">Inhoud van deze website</div>
+        <div style="display:flex; flex-direction:column">
+          <a href="#" style="color:#1f1d1a; text-decoration:none; font-size:14.5px; font-weight:600; padding:11px 0; border-bottom:1px solid #e3ded4">Startpagina</a>
+          <a href="#" style="color:#4c4740; text-decoration:none; font-size:14.5px; padding:11px 0; border-bottom:1px solid #e3ded4">Visie en uitdagingen</a>
+          <a href="#" style="color:#4c4740; text-decoration:none; font-size:14.5px; padding:11px 0; border-bottom:1px solid #e3ded4">Samenwerking mogelijk maken</a>
+          <a href="#" style="color:#4c4740; text-decoration:none; font-size:14.5px; padding:11px 0; border-bottom:1px solid #e3ded4">Veelgestelde vragen</a>
+          <a href="#" style="color:#4c4740; text-decoration:none; font-size:14.5px; padding:11px 0">Contact</a>
+        </div>
+      </aside>
+
+      <div style="max-width:44em">
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">01</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Aanleiding</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; text-wrap:pretty">In Bergen op Zoom wordt onderzocht of een gemeentebreed ondernemersfonds wenselijk is. Een ondernemersfonds is een fonds vóór en dóór ondernemers en maatschappelijke organisaties (onderwijs, zorg, sport, cultuur). Het biedt een stabiele, langjarige financiële basis om samen te werken aan een sterker vestigingsklimaat. In meer dan vijftig Nederlandse gemeenten bestaat al zo'n fonds, onder meer in Helmond en Laarbeek.</p>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0; text-wrap:pretty">Sinds februari 2026 werkt een brede initiatiefgroep van ondernemersverenigingen, bedrijventerreinen en maatschappelijke organisaties samen aan een voorstel. Inmiddels ligt er een uitgewerkt voorstel, met een advies aan de gemeenteraad om het fonds per 1 januari 2027 in te voeren. Het definitieve besluit valt naar verwachting in november/december 2026, bij de begrotingsbehandeling van de gemeenteraad.</p>
+
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px; margin-top:44px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">02</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Gedragen door de initiatiefgroep</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 0; text-wrap:pretty">In de initiatiefgroep zijn de bedrijventerreinen TNP, Oude Molen en LMM vertegenwoordigd, samen met ondernemersvereniging Sterck (binnenstad), MKB Bergen op Zoom, VNO-NCW Brabantse Wal, onderwijsinstelling Curio, ziekenhuis Bravis, Koninklijke Horeca Nederland afdeling Bergen op Zoom, de dorpswinkelcentra (via Winkelhart Halsteren) en individuele ondernemers. Sinds de start denken zij actief mee over het voorstel. Die betrokkenheid heeft geleid tot een groeiend enthousiasme: partijen die aanvankelijk terughoudend waren, zien inmiddels de meerwaarde van een fonds en pleiten zelf voor een voortvarende start. De initiatiefgroep moedigt ondernemers en organisaties in Bergen op Zoom aan om actief mee te denken.</p>
+
+        <div style="display:flex; gap:14px; align-items:baseline; border-top:2px solid #1f2a28; padding-top:14px; margin-top:44px">
+          <div style="font-size:13px; font-weight:700; color:#33514c">03</div>
+          <h2 style="font-size:clamp(24px, 3vw, 32px); letter-spacing:-0.02em; font-weight:700; margin:0">Doel van deze website</h2>
+        </div>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:16px 0 14px; text-wrap:pretty">Deze website is bedoeld om ondernemers, vastgoedeigenaren en maatschappelijke organisaties in Bergen op Zoom te informeren over het voorstel: waarom een ondernemersfonds, wat de belangrijkste opgaven zijn, hoe het fonds is opgebouwd en wat het voor u kan betekenen.</p>
+        <p style="font-size:17px; line-height:1.65; color:#33302b; margin:0; text-wrap:pretty">Deze website is een verlengstuk van de initiatiefgroep om informatie te delen en in contact te komen met ondernemers en vastgoedeigenaren. Heeft u een vraag die hier niet beantwoord wordt? Neem dan gerust contact op (zie colofon).</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#f2efe9; margin-top:clamp(48px, 6vw, 80px)">
+    <div style="max-width:1180px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px">
+      <h2 style="font-size:clamp(22px, 2.6vw, 28px); letter-spacing:-0.02em; font-weight:700; margin:0 0 6px">Op deze website</h2>
+      <p style="font-size:16px; line-height:1.6; color:#5c574f; margin:0 0 28px">Gebruik de pagina's hieronder (of de navigatiebalk) om verder te lezen.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px">
+        <a href="#" style="display:flex; flex-direction:column; justify-content:space-between; gap:36px; text-decoration:none; background:#faf8f4; border-top:3px solid #33514c; padding:20px 20px 18px; min-height:130px" style-hover="background:#ffffff">
+          <div style="font-size:15.5px; font-weight:600; color:#1f1d1a; line-height:1.3">Visie en uitdagingen voor Bergen op Zoom</div>
+          <div style="font-size:13px; color:#33514c; font-weight:600">Lees verder →</div>
+        </a>
+        <a href="#" style="display:flex; flex-direction:column; justify-content:space-between; gap:36px; text-decoration:none; background:#faf8f4; border-top:3px solid #33514c; padding:20px 20px 18px; min-height:130px" style-hover="background:#ffffff">
+          <div style="font-size:15.5px; font-weight:600; color:#1f1d1a; line-height:1.3">Samenwerking mogelijk maken</div>
+          <div style="font-size:13px; color:#33514c; font-weight:600">Lees verder →</div>
+        </a>
+        <a href="#" style="display:flex; flex-direction:column; justify-content:space-between; gap:36px; text-decoration:none; background:#faf8f4; border-top:3px solid #33514c; padding:20px 20px 18px; min-height:130px" style-hover="background:#ffffff">
+          <div style="font-size:15.5px; font-weight:600; color:#1f1d1a; line-height:1.3">Veelgestelde vragen</div>
+          <div style="font-size:13px; color:#33514c; font-weight:600">Lees verder →</div>
+        </a>
+        <a href="#" style="display:flex; flex-direction:column; justify-content:space-between; gap:36px; text-decoration:none; background:#faf8f4; border-top:3px solid #33514c; padding:20px 20px 18px; min-height:130px" style-hover="background:#ffffff">
+          <div style="font-size:15.5px; font-weight:600; color:#1f1d1a; line-height:1.3">Contact</div>
+          <div style="font-size:13px; color:#33514c; font-weight:600">Lees verder →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(40px, 5vw, 64px) 28px">
+    <div style="display:flex; gap:24px; align-items:center; justify-content:space-between; flex-wrap:wrap; border-top:2px solid #1f2a28; padding-top:26px">
+      <p style="font-size:clamp(18px, 2.2vw, 24px); line-height:1.4; font-weight:500; margin:0; max-width:26em; letter-spacing:-0.012em">Wilt u meer weten over wat het fonds voor uw gebied kan betekenen? Neem contact op.</p>
+      <a href="#" style="background:#1f2a28; color:#f2efe9; text-decoration:none; padding:15px 28px; font-size:15px; font-weight:600; white-space:nowrap">Contact opnemen</a>
+    </div>
+  </section>
+
+  <footer style="background:#1f2a28; color:#b9b3a8">
+    <div style="max-width:1180px; margin:0 auto; padding:26px 28px; display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap; font-size:13.5px">
+      <div>Initiatiefgroep Ondernemersfonds Bergen op Zoom</div>
+      <div>Besluitvorming gemeenteraad: november/december 2026</div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
